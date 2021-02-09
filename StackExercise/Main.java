@@ -8,8 +8,6 @@ class Main {
         // printLinkedStackTest(20);
 
         printQueueListTest(20);
-        
-
 
     }
 

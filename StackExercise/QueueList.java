@@ -1,4 +1,3 @@
-import org.graalvm.compiler.nodes.NodeView.Default;
 
 public class QueueList<T> implements Queue<T> {
 
@@ -16,6 +15,10 @@ public class QueueList<T> implements Queue<T> {
 
     }
 
+    /**
+     * Inserts a new item in the queue
+     * @param item to add to queue
+     */
     @Override
     public void enqueue(T item) {
 
@@ -34,25 +37,37 @@ public class QueueList<T> implements Queue<T> {
 
     }
 
+    /**
+     * Removes "last" element from the queue (FIFO)
+     * @return item from removed element
+     */
     @Override
     public T dequeue() {
-
+        // if queue is empty 
         if(bottom == null) return null; 
 
+        // value from current bottom element
         final T value = bottom.value;
         
+        // set bottom to "next in line in the queue"
         bottom = bottom.next;
-
 
         return value;
 
     }
 
+    /**
+     * @return the current "last" element in the queue
+     */
     @Override
     public T peek() {
         return bottom.value;
     }
 
+    /**
+     * Checks if the queue is empty
+     * @return boolean (true if empty)
+     */
     @Override
     public boolean isEmpty() {
         return bottom == null;
