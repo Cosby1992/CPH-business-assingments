@@ -34,7 +34,25 @@ public class SteganographyDecoder {
             // read image file bytes
             BufferedImage image = ImageIO.read(this.image);
 
-            ArrayList<Integer> bytes = new ArrayList<>();
+            // TEST LOOP
+            // System.out.println("Filling byte array");
+            for (int i = 0; i < 10; i++) {
+
+                for (int j = 0; j < image.getWidth(); j++) {
+
+                    int clr = image.getRGB(j, i);
+                    Color color = new Color(clr, true);
+
+                    // System.out.print(color.getRed() + " " + color.getGreen() + " " + color.getBlue() + " ");
+                    // getLastBitFromIntColor(clr);
+                    // System.out.println();
+                    
+
+                }
+
+            }
+
+            ArrayList<String> bytes = new ArrayList<>();
 
             // System.out.println("Filling byte array");
             for (int i = 0; i < image.getHeight(); i++) {
@@ -53,15 +71,17 @@ public class SteganographyDecoder {
 
             int temp = 0;
             String nextChar = "";
-            ArrayList<Integer> message = new ArrayList<>();
+            ArrayList<String> message = new ArrayList<>();
 
             for (int i = 0; i < bytes.size(); i++) {
-                temp++;
-                // nextChar += String.valueOf(bytes.get(i));
-                nextChar += (bytes.get(i) == 0) ? "0" : "1";
                 
+                // System.out.print(bytes.get(i));
+                // nextChar += String.valueOf(bytes.get(i));
+                nextChar += bytes.get(i);
 
-                if (temp == 8) {
+                if (temp == 7) {
+
+                    System.out.print(nextChar + " ");
 
                     if (nextChar.equals("00000000")) {
                         System.out.println("BREAKING: EMPTY BYTE");
@@ -70,34 +90,75 @@ public class SteganographyDecoder {
 
                     // System.out.println(Integer.parseInt(nextChar, 2));
 
-                    message.add(Integer.parseInt(nextChar, 2));
+                    message.add(nextChar);
                     // System.out.println("Temp == 7: " + nextChar);
                     temp = 0;
                     nextChar = "";
+
+                    continue;
                 }
 
+                temp++;
+
             }
 
-            for (int character : message) {
-                System.out.print((char) character);
+            System.out.println();
+
+            for (String stringByte : message) {
+                // System.out.print((char) character);
+
+                System.out.println(stringByte);
+                System.out.print((char) Integer.parseInt(stringByte));
+
             }
+
+            System.out.println();
 
         } catch (Exception e) {
+            System.out.println("Problem reading image: " + e.getMessage());
             return e.getMessage();
         }
 
         return decodedMessage;
     }
 
-    private int getBit(int blue) {
-        System.out.print(blue & 1);
-        return blue & 1;
+    private String bitStringToFullByteString(String bitString){
+
+        String toAddInFrontOfBitString = "";
+
+        for (int i = 0; i < 8-bitString.length(); i++) {
+            toAddInFrontOfBitString += "0";
+        }
+
+        StringBuilder builder = new StringBuilder(bitString);
+
+        builder.insert(0, toAddInFrontOfBitString);
+
+        return builder.toString();
+
     }
 
-    private int getLastBitFromIntColor(int clr) {
+    private String getLastBitFromIntColor(int clr) {
 
         Color color = new Color(clr, true);
-        return getBit(color.getBlue());
+
+        String blueBitString = Integer.toBinaryString(color.getBlue());
+        
+        boolean manipulated = false;
+
+        if(blueBitString.length() != 8){
+            manipulated = true;
+            blueBitString = bitStringToFullByteString(blueBitString);
+        }
+
+        if(manipulated){
+            System.out.println("bluebitstring: " + blueBitString + " " + blueBitString.charAt(7) + " manipulated");
+        } else {
+            System.out.println("bluebitstring: " + blueBitString + " " + blueBitString.charAt(7));
+        }
+        
+
+        return String.valueOf(blueBitString.charAt(7));
 
     }
 
