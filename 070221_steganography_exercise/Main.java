@@ -20,6 +20,7 @@ public class Main {
 
             // Print message in terminal
             System.out.println(message);
+            // OUTPUT: Congratulations, this is the secret message of the UFO class! (no, not 42)
 
         } catch (Exception e){ // if there's an error reading the image
             System.out.println(e.getMessage());
