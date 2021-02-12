@@ -2,8 +2,8 @@
 
 A repository to contain exercises while attending Software Development education at CPH Business school. 
 
-## Steganography
------------------- not done ------------------
-
 ## Stack and Queue
-Discreet mathmatics and algorithms. 
+Implementation examples for Stack and Queue in Java.  
+
+## Steganography
+Takes specific bit from an interger pixel representation and chains them together as bytes and returns a message created from the bytes. 
