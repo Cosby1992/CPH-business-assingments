@@ -7,7 +7,7 @@ class Main {
         // printArrayStackTest(20);
         // printLinkedStackTest(20);
 
-        printQueueListTest(20);
+        //printQueueListTest(20);
 
     }
 

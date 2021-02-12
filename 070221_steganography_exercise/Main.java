@@ -1,15 +1,30 @@
 import java.io.File;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        File image = new File("7fe3c3f6-Stego.png");
-        SteganographyDecoder decoder = new SteganographyDecoder(image);
+        File image = new File("7fe3c3f6-Stego.png"); // <-- loading the image file
 
-        decoder.decode();
+        try{
+            // reading the image (Throws exception)
+            BufferedImage bufferedImage = ImageIO.read(image);
+
+            // Create new instans of ImageSteganography to decode message from image
+            ImageSteganography imageDecoder = new ImageSteganography();
+
+            // Get Ascii message from bit 0 in the color of each pixel
+            String message = imageDecoder.decodeWithLittleEndianFromImageByBitPosition(bufferedImage, 0);
+
+            // Print message in terminal
+            System.out.println(message);
+
+        } catch (Exception e){ // if there's an error reading the image
+            System.out.println(e.getMessage());
+        }
 
     }
-
 
 }
