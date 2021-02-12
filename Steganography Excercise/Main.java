@@ -15,7 +15,7 @@ public class Main {
             // Create new instans of ImageSteganography to decode message from image
             ImageSteganography imageDecoder = new ImageSteganography();
 
-            // Get Ascii message from bit 0 in the color of each pixel
+            // Get Ascii message from bit 0 in the color of each pixel (Blue least significant bit)
             String message = imageDecoder.decodeWithLittleEndianFromImageByBitPosition(bufferedImage, 0);
 
             // Print message in terminal
