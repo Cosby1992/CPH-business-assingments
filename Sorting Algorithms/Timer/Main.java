@@ -2,7 +2,6 @@
  * Timer test class, to test the timer
  */
 
-
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
