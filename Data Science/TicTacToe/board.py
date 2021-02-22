@@ -8,8 +8,10 @@ class board():
     
     def place(self, row, col):
         if not (row >= 0 and row < 3 and col >= 0 and col < 3): return False
-
+        if not (self.posistion_is_empty(row, col)): return False
+        
         self.__board[row][col] = self.__player
+        return True
     
     def check_if_game_is_won(self):
         b = self.__board
@@ -41,11 +43,12 @@ class board():
 
     def get_player(self):
         return self.__player
+
+    def posistion_is_empty(self, row, col):
+        if not self.__board[row][col] == ' ': return False
+        else: return True
+    
     
     def toggleTurn(self):
         if self.__player == 'X': self.__player = 'O'
         else: self.__player = 'X'
-    
-
-
-
