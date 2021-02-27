@@ -1,6 +1,7 @@
 import copy
 from board import board as boardClass
-import minimax
+import minimax_aplha_beta as minimax
+#import minimax
 import constants
 
 def init_game():
@@ -73,6 +74,7 @@ def init_player_vs_ai_game():
     turn = 1
 
     while run_game_loop:
+        print("\nNew game vs AI started. Good Luck ;)")
 
         while True:
             
@@ -114,7 +116,7 @@ def init_player_vs_ai_game():
         if board.game_is_tie(): print("The game was a tie!")
         else: 
             if board.get_player() == 'O': print("Congratulation's, you beat the machine!")
-            else: print("AI won the game. Next step: KILL ALL HUMANS")
+            else: print("AI won the game.\nNext step: KILL ALL HUMANS")
         
         board = boardClass()
         game_over = False
