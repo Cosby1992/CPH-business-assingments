@@ -4,6 +4,7 @@ import minimax_aplha_beta as minimax
 #import minimax
 import constants
 
+# Initializes a new game loop and takes user inputs
 def init_game():
     
     player_input = ''
@@ -78,21 +79,26 @@ def init_player_vs_ai_game():
 
         while True:
             
+            # Force AI to place in center in first move
             # if(board.is_empty()):
             #     board.make_move(1,1)
             #     board.print_board()
             # else: 
+
+            # AI move
             newBoard = copy.deepcopy(board)
             best_move = minimax.get_best_move_maximizer(newBoard)
             board.make_move(best_move[0], best_move[1])
             board.print_board()
 
+            # Check if game is over
             if board.game_is_won() or board.game_is_tie(): 
                 break
             
-            board.toggle_turn()
+            board.toggle_turn() 
             player_turn = True
 
+            # Player move, take input until move is legal
             while(player_turn):
                 print("\n\n")
                 print('it is ' + board.get_player() + "'s turn")
@@ -107,12 +113,13 @@ def init_player_vs_ai_game():
 
             board.print_board()
             
-
+            # Check if game is over
             if board.game_is_won() or board.game_is_tie(): 
                 break
 
             board.toggle_turn()
-
+        
+        # If game is over
         if board.game_is_tie(): print("The game was a tie!")
         else: 
             if board.get_player() == 'O': print("Congratulation's, you beat the machine!")
@@ -122,6 +129,8 @@ def init_player_vs_ai_game():
         game_over = False
 
         play_again = False
+        
+        # Promt for new game, exit loop if no
         while not play_again:
             play_again = input("Do you want to play again? (y / n): ")
         else:

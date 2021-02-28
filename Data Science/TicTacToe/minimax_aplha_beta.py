@@ -3,6 +3,7 @@ import constants
 import time
 from board import board as boardClass
 
+# Global counters
 calculations_made = 0
 pruning_count = 0
 
@@ -39,6 +40,7 @@ def minimax(board, depth, alpha, beta):
                 # check if cell is empty
                 if (board.posistion_is_empty(i, j)):
 
+                    # pruning 
                     if beta <= best_score: 
                         increment_global_pruning_count()
                         break
@@ -78,6 +80,7 @@ def minimax(board, depth, alpha, beta):
                 # check if cell is empty
                 if (board.posistion_is_empty(i, j)):
                     
+                    # pruning
                     if alpha >= best_score: 
                         increment_global_pruning_count()
                         break
@@ -105,13 +108,16 @@ def minimax(board, depth, alpha, beta):
 
 
 # Function that uses the minimax function to get 
-# the posistion for the best posssible move
+# the posistion for the best posssible move for "X" / Attacing player
 def get_best_move_maximizer(board):
 
+    # start algorithm timer
     timer_start = time.perf_counter()
 
+    # Used to calculate all possible board combinations
     empty_cell_count = 0
 
+    # initialize start values
     best_posistion = (-1, -1)
     best_score = -10000
     beta = 10000
@@ -150,21 +156,27 @@ def get_best_move_maximizer(board):
                     best_posistion = (i, j)
                     best_score = move_score
 
+    # Stop timer
     timer_stop = time.perf_counter()
 
+    # calculate all possible board combinations
     total_posible_moves = calculate_faculty(empty_cell_count)
 
+    # Getting global variables
     global calculations_made
     global pruning_count
 
+    # Printing info about this move
     print(f"{total_posible_moves} total possible moves")
     print(f"{calculations_made} moves considered in {(timer_stop - timer_start)*1000.0:0.4f} ms")
     print(f"{pruning_count} prunings were made")
     print("Score of the worst case scenario is: ", best_score)
     
+    # Taunt player if winning
     if best_score > constants.MAX_SCORE - 10 and best_score < constants.MAX_SCORE: 
         print("AI will win this game...")
 
+    # reset the global counters
     reset_global_counter()
     reset_global_pruning_count()
 
@@ -172,13 +184,16 @@ def get_best_move_maximizer(board):
     return best_posistion
 
 # Function that uses the minimax function to get 
-# the posistion for the best posssible move
+# the posistion for the best posssible move for "O" / defending player
 def get_best_move_minimizer(board):
 
+    # Start algorithm timer
     timer_start = time.perf_counter()
 
+    # Used to calculate all possible board combinations from board state
     empty_cell_count = 0
 
+    # Initialize start values 
     best_posistion = (-1, -1)
     best_score = 10000
     alpha = -10000
@@ -217,16 +232,23 @@ def get_best_move_minimizer(board):
                     best_posistion = (i, j)
                     best_score = move_score
 
+    # Stop the timer
     timer_stop = time.perf_counter()
     
+    # Calculate all possible board combinations
     total_posible_moves = calculate_faculty(empty_cell_count)
-    global calculations_made
 
+    # Get global variable
+    global calculations_made
+    global pruning_count
+
+    # Print move data
     print(f"{total_posible_moves} total possible moves")
     print(f"{calculations_made} moves considered in {(timer_stop - timer_start)*1000.0:0.4f} ms")
     print(f"{pruning_count} moves pruned")
     print("Score of the worst case scenario is: ", best_score)
 
+    # Reset global counters
     reset_global_counter()
     reset_global_pruning_count()
 
