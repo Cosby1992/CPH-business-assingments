@@ -26,7 +26,7 @@ def selection_sort(arr):
         lowest_index = pointer
 
         # Run through array and find lowest value index
-        for i in range(pointer, len(array)):
+        for i in range(pointer, len(arr)):
             if arr[lowest_index] > arr[i]:
                 lowest_index = i
         
