@@ -16,7 +16,7 @@ Edit SnakeSpear.py to use another sorting algorithm on line 33-39
 5. Shake.txt has shakespears complete works. Copyright and info in top and bottom has been removed. The rest is sanitized in the code.
 
 ### Expected output
-´´´
+```
 ####Starting Program####
 Starting sorting timer...
 Sorting 899449 items.
@@ -24,4 +24,4 @@ Sorting took 3.4455763000000004s
 Looking if the words 'bamboozle','to', 'be', 'or' and 'not' exists in the Trie Dictionary(False, True, True, True, True)
 Looking up the first index in a binary search for the word 'horse' 329301
 Looking up the word on that index, which is... horse
-´´´
+```
