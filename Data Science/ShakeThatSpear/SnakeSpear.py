@@ -27,7 +27,8 @@ for i in range(len(result)):
     dictionary.add(result[i])
 
 ##timer start:
-print("Starting sorting timer")
+print("Starting sorting timer...")
+print(f"Sorting {len(result)} items.")
 timeStart = time.perf_counter()
 
 ## different sorting methods:
