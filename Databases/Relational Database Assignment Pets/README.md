@@ -61,7 +61,7 @@ Vi holder fokus på nem implementering og hurtige selection queries.
 Havde der været oplyst om store datamængder, så havde vi nok valgt Joint Table Strategy for at have fokus på overblik og pladsbesparelse.
 
 ## ER Diagram
-![ER diagram](./db_setup/er-diagram.png "ER diagram")
+![ER diagram](https://github.com/Cosby1992/CPH-business-assingments/blob/master/Databases/Relational%20Database%20Assignment%20Pets/db_setup/er-diagram.PNG "ER diagram")
 
 ## Filbeskrivelse
 ### **Mappestruktur:**
