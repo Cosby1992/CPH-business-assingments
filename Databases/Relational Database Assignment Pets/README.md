@@ -10,6 +10,8 @@
 5. Create a ```.env``` file and fill it as instructed in the ```example.env``` file
 6. Run ```app.js``` with CLI command: ```node app``` - from root folder
 
+**OBS:** if you don't want to download the entire repository, you can get just this folder as a zip-file from this downGit link: [Download folder as zip from DownGit](https://downgit.github.io/#/home?url=https://github.com/Cosby1992/CPH-business-assingments.git/trunk/Databases/Relational%20Database%20Assignment%20Pets "Download this folder as zip")
+
 ## Sprogvalg
 Vi har valgt at benytte Javascript til at løse denne opgave. Dette valg er baseret på at det kunne være sjovt at arbejde med Javascript, semi objektorienteret. Valget er altså IKKE baseret på at vi synes Javascript egnede sig bedst til opgaven. 
 Det har været sjovt, men der opstår meget unødvendig implementering når vi benytter Javascript i en objektorienteret facon. Blandt andet modtager vi responset fra databasen som et nydeligt Json objekt. Men tvinger det nu over i selv beskrevne klasser. Vi kunne nemt have arbejdet med Json objekterne som de var, og det er vidst også det mest normale i Javascript. Det har ikke sine stærke sider i OOP.
