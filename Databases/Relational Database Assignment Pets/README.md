@@ -10,7 +10,7 @@
 5. Create a ```.env``` file and fill it as instructed in the ```example.env``` file
 6. Run ```app.js``` with CLI command: ```node app``` - from root folder
 
-**OBS:** if you don't want to download the entire repository, you can get just this folder as a zip-file from this downGit link: [Download folder as zip from DownGit](https://downgit.github.io/#/home?url=https://github.com/Cosby1992/CPH-business-assingments.git/trunk/Databases/Relational%20Database%20Assignment%20Pets "Download this folder as zip")
+**OBS:** if you don't want to download the entire repository, you can get just this folder as a zip-file from this downGit link: [Download folder as zip from DownGit](https://downgit.github.io/#/home?url=https:%2F%2Fgithub.com%2FCosby1992%2FCPH-business-assingments%2Ftree%2Fmaster%2FDatabases%2FRelational%20Database%20Assignment%20Pets "Download this folder as zip")
 
 ## Sprogvalg
 Vi har valgt at benytte Javascript til at løse denne opgave. Dette valg er baseret på at det kunne være sjovt at arbejde med Javascript, semi objektorienteret. Valget er altså IKKE baseret på at vi synes Javascript egnede sig bedst til opgaven. 
