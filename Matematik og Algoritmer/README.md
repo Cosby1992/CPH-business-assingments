@@ -6,7 +6,8 @@ Have python intalled
 Clone this repository
 run tower_of_hanoi.py 
 
-OBS: If you don't want to clone this entire repository you can get the project as zip folder by pressing here [download downgit link](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Cosby1992/CPH-business-assingments/tree/master/Matematik%20og%20Algoritmer "download")
+OBS: If you don't want to clone this entire repository you can get the project as zip folder by pressing here [download downgit link](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Cosby1992/CPH-business-assingments/tree/master/Matematik%20og%20Algoritmer "download").
+Or you could just copy the content of the tower_of_hanoi file to a new python file on your pc and run it from there.
 
 # Features
 You can input any number of disc you want and it will print it to the console. <br>
