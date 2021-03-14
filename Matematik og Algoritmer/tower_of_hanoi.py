@@ -128,7 +128,7 @@ def TowerOfHanoi(n , source, destination, auxiliary):
 # OBS: The number of moves raises with (2^n) - 1
 # 10 discs =      1023 moves
 # 20 discs ~ 1.048.500 moves
-init_game(4)          
+init_game(15)          
 
 
 
