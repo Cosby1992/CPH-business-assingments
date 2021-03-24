@@ -1,6 +1,10 @@
 # Assignment #4 - Analysing Log data 
 ### Discrete Mathematics
 
-Sorry hvis i når at skulle reviewe dette inden vi får færdiggjort det. Vi har Data Science som valgfag og prioriterede opgaven der højest. Men vi arbejder stadig på denne opgave. Vi håber vi når at lave den inden der skal reviewes. 
+We have implemented an example of Finite state generator. We did not complete either task one or two.. 
+
+**Interfaces:** Automaton, State, Alphabet <br>
+**Classes:** UseAutomaton, UseState, UseAlphabet (implements relative interfaces) <br>
+**Main:** Runs an instanse of a word through our regular expression "A(B|C)*D" using the classes <br>
 
 
