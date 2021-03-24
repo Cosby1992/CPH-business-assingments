@@ -1,4 +1,3 @@
-package com.company;
 
 public class UseState implements State {
    private final boolean isFinal;

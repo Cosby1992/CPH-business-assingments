@@ -1,5 +1,3 @@
-package com.company;
-
 
 /**
  * State interface includes:
