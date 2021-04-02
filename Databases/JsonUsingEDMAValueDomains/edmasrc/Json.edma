@@ -1,0 +1,32 @@
+
+// Json basic datatypes
+ValueDomain AnyString : String[MIN..MAX]
+ValueDomain AnyBool : Boolean
+ValueDomain AnyInt : Integer[MIN..MAX]
+ValueDomain AnyFloat : Float[MIN..MAX]
+
+// Json key 
+ValueDomain Key : String[1..MAX] 
+
+// Json value (OBS: Can be array or objects as well)
+ValueDomain Value : OneOf<AnyString, AnyBool, AnyInt, AnyFloat, AnyArray, JsonObject>
+
+// Json member
+ValueDomain Member : Struct {
+    pair : Pair,
+    member? : Member
+}
+
+// Json array
+ValueDomain AnyArray : List<Value>
+
+// Json Key-Value pair
+ValueDomain Pair : Struct{
+    key : Key, 
+    value : Value
+    }
+
+// Definition of Json object using previous datatypes
+ValueDomain JsonObject : Struct {
+    member : Member
+}
