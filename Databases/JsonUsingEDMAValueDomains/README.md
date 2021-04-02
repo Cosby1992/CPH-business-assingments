@@ -8,7 +8,7 @@ Create a toString method for printing an instance*** of your JSON abstract synta
 ## Solution
 The solution is descriped weel in the comments of the ```Play.java``` class. The Json we are replicating in this example is defined as in the image below: 
 
-![Image of the Json being replicated](https://github.com/Cosby1992/CPH-business-assingments/tree/master/Databases/JsonUsingEDMAValueDomains/assignment_and_assets/json.png)
+![Image of the Json being replicated](https://github.com/Cosby1992/CPH-business-assingments/blob/master/Databases/JsonUsingEDMAValueDomains/assignment_and_assets/json.PNG)
 
 ## To run
 1. Clone this repo or download only this folder by following this link: https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Cosby1992/CPH-business-assingments/tree/master/Databases/JsonUsingEDMAValueDomains
