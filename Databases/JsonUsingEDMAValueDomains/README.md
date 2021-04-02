@@ -1,9 +1,9 @@
 # Assignment 3 
 ## Task 1 
-Model the JSON* abstract syntax tree** using ValueDomains (hint: can be done using around 8 
+Model the JSON abstract syntax tree using ValueDomains (hint: can be done using around 8 
 ValueDomains).
 ## Task 2
-Create a toString method for printing an instance*** of your JSON abstract syntax tree as valid Json
+Create a toString method for printing an instance of your JSON abstract syntax tree as valid Json
 
 ## Solution
 The solution is descriped weel in the comments of the ```Play.java``` class. The Json we are replicating in this example is defined as in the image below: 
