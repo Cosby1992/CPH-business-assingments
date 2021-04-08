@@ -1,0 +1,156 @@
+\documentclass{article}
+
+\usepackage{cite}
+
+
+\title{Databases for Developers - Assignment 2}
+\author{Anders Jacobsen, Dima Karaush}
+
+\begin{document}
+\maketitle
+
+\section{Task 1 - investigation}
+Produce a small writeup (around 300 words) answering the following questions.
+\begin{enumerate}
+\item What is point of NoSQL databases?
+\item What is the CAP theorem?
+\item What are ideal use cases of HBase?
+\end{enumerate}
+
+\subsection{What is the point of NoSQL databases}
+The point of NoSQL databases is to fill the holes where SQL databases does not. 
+We handle data in many different ways, so it is just logical that we should have 
+multiple tools for storing that data. Some pros and cons can be found below. 
+\subsubsection*{Pros}
+\begin{itemize}
+    \item Performance
+    \item Scalability
+    \item Flexibility
+    \item Data Models
+\end{itemize}
+
+\subsubsection*{Cons}
+\begin{itemize}
+    \item Not mature
+    \item Requires multiple databases
+    \item Huge databases
+\end{itemize}
+
+But the above information depends heavily on witch NoSQL database you choose. There are many!
+
+\subsection{What is the CAP theorem}
+In theoretical computer science, the CAP theorem, also named Brewer's theorem after computer 
+scientist Eric Brewer, states that it is impossible for a distributed data store to 
+simultaneously provide more than two out of the following three guarantees\cite{wiki_CAP}:
+\begin{itemize}
+    \item Consistency: Every read receives the most recent write or an error
+    \item Availability: Every request receives a (non-error) response, without the guarantee 
+    that it contains the most recent write
+    \item Partition tolerance: The system continues to operate despite an arbitrary number of 
+    messages being dropped (or delayed) by the network between nodes
+\end{itemize}
+
+\subsection{What are ideal use cases of HBase}
+HBase uses Google's BigTable paper as blueprint, HBase is build on Hadoop and the Hadoop 
+Distributed File System (HDFS) and designed for scaling horizontally on clusters of 
+commodity hardware. HBase makes strong consistency guarantees and features tables with rows 
+and columns - with should make SQL fans feel right at home. Out-of-the-box support for 
+versioning and compression\cite{sevendbsinsevenweeks}.
+
+
+\section{Task 2 - Bloom filters}
+Bloom filters are used in hbase as an incredible optimization. Solve the following.
+\begin{enumerate}
+    \item What is a bloom filter?
+    \item What is an advantage of bloom filters over hash tables?
+    \item What is a disadvantage of bloom filters?
+    \item Using your language of choice, implement a bloom filter with add and check functions. The backing bit-array can simply be a long (64 bit integer)
+    \item If you are to store one million ASCII strings with an average size of 10 characters in a hash set, what would be the approximate space consumption?
+    \item The following equation gives the required number of bits of space per inserted key, where E is the false positive rate. \( b = 1.44log_2(1/\xi)\)
+    \item How many bits per element are required for a 1\% false positive rate?
+    \item How many bits per element are required for a 5\% false positive rate?
+    \item If you are to store one million ASCII strings with an average size of 10 characters in a bloom filter, what would be the approximate space consumption, given an allowed false positive rate of 5\%?.
+
+\end{enumerate}
+
+\subsection{What is a bloom filter}
+A Bloom filter is a data structure designed to tell you, rapidly and memory-efficiently, 
+whether an element is present in a set. The price paid for this efficiency is that a Bloom 
+filter is a probabilistic data structure: it tells us that the element either definitely 
+is not in the set or may be in the set\cite{bloomfilterbyexample}.
+
+\subsection{What is an advantage of bloom filters over hash tables}
+Bloom filters is more space efficient. Since it does not store the actual object.
+
+\subsection{What is a disadvantage of bloom filters}
+The bloom filter is a  probabilistic data structure, this means that the result has a small 
+risk of returning as a "false positive". This could mean that you get a positive result 
+for an object that does not exist.
+
+\subsection{Using your language of choice, implement a bloom filter with add and check functions}
+We have made a very simple exapmle of a bloom filter in python, it can be found in the folder "bloom\_filter".
+
+\subsection{If you are to store one million ASCII strings with an average size of 10 characters in a hash set, what would be the approximate space consumption}
+
+\[ One ASCII character = 8 bits \] 
+\newline
+\[ String lenght 10 = 80 bits \]
+\newline
+\[ Times a million = 80.000.000 bits \]
+\newline
+\[ 80.000.000 bits = 10 Mb (Megabytes) \]
+
+For each entry the HashSet normally takes an empty space of equal 
+size of the object as well as a pointer to the next entry.  
+In Java the standart HashSet implementations memory consumption 
+can be defined as \[ 32 * SIZE + 4 * CAPACITY \]
+
+The default Capacity of a HashSet implementation is 16
+
+Therefore \[ 32*1000000+4*16 = 32.000.064 bytes = 30.5176 Mb \]
+
+So the approximate memory consumtion for a HashSet in Java 
+for storing 1.000.000 10 letter string would be 30.5176 Mb
+
+\subsection{The following equation gives the required number of bits of space per inserted key, where E is the false positive rate}
+\label{section:equation}
+\[ b = 1.44log_2(1/\xi)\]
+
+\subsection{How many bits per element are required for a 1\% false positive rate}
+We insert the probability (procent as decimal) in the equation from section \ref{section:equation}:
+\[ b = 1.44log_2(1/0.01) = 9.56715291328\]
+
+We can now conclude that we need approx. 9.57 bits of space pr. inserted key, to get a 1\% false positive rate.
+
+
+\subsection{How many bits per element are required for a 5\% false positive rate}
+\label{section:bitspritem}
+We insert the probability (procent as decimal) in the equation from section \ref{section:equation}:
+\[ b = 1.44log_2(1/0.05) = 6.22357645664\]
+
+We can now conclude that we need approx. 6.22 bits of space pr. inserted key, to get a 5\% false positive rate.
+
+\subsection{If you are to store one million ASCII strings with an average size of 10 characters in a bloom filter, what would be the approximate space consumption, given an allowed false positive rate of 5\%}
+We insert the space consumtion from section \ref{section:bitspritem}:
+\[ 6.22357645664*1000000 = 6223576.45664\]
+
+The approx. space consumtion would therefore be 6223576.46 bits that equals approx. 759.71 Kilobytes. 
+
+\section{Task 3 - Huffman coding}
+HBase internally uses a compression that is a combination of LZ77 and Huffman Coding.
+\begin{enumerate}
+    \item Generate Huffmann Code (and draw the Huffmann Tree) based on the following string: “beebs beepps!!!!! their eerie ears hear pears”
+    \item How many bits is the compressed string? How many bits is the raw ASCII string?
+    \item Compress “pete is here” with the Huffmann tree from before.
+    \item Write your own 10 word sentence. Generate the Huffmann Code (a new Huffmann Tree), and write a new compressed message (ie. in binary). Swap with one of your fellow students, and decompress each other’s message.
+
+\end{enumerate}
+
+
+
+\bibliography{bibliography}{}
+\bibliographystyle{plain}
+
+
+
+\end{document}

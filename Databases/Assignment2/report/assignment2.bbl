@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{bloomfilterbyexample}
+Bill Mill.
+\newblock Bloom filters by example.
+
+\bibitem{wiki_CAP}
+the free~encyclopedia Wikipedia.
+\newblock Cap theorem.
+
+\bibitem{sevendbsinsevenweeks}
+Luc~Perkins with Eric~Redmond and Jim~R. Wilson.
+\newblock {\em Seven Databases in Seven Weeks}.
+\newblock Andy-Hunt, 2018.
+
+\end{thebibliography}
