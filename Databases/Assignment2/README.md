@@ -6,13 +6,12 @@
 We have not finished the entire assignment yet, but we are working on it. You can find the answers to the text based questions in ```/report/assignment2.pdf```. The pdf is generated using LaTeX. 
 
 ### Code
-#### Bloom filter
-The solution to the bloom_filter problem can be found in ```/bloom_filter/bloom_filter.py```, you can run the file like any other  python project, by cloning this repo and running ```bloom_filter.py``` in your favorite editor. 
+#### **Bloom filter**
+The solution to the bloom_filter problem can be found in ```/bloom_filter/bloom_filter.py```.
 
-#### Huffman Coding
-We are working hard to get this assignment done, you can see what we have so far in ```/huffman_coding/huffman_coding.py```. 
-We have drawn the huffman tree in paint for now, a png image can be found in ```/huffman_coding/extra/HauffmanTree.png```.
-Everything in this assignment is done from the String ```"beebs beepps!!!!!  their eerie ears hear pears"```
+#### **Huffman Coding**
+We have drawn the huffman tree in paint, a png image can be found in ```/huffman_coding/extra/HuffmanTree.png```.
+It's also printed to the console when running the project. An expected output can be found in the **readme** of the ```huffman_coding``` folder.
 
-
-We hope to resolve more of the assignment before it's time for review. You can of course not review the parts of the assignment that are not done, we are well aware of this. Sorry in advance :)
+It's almost done, we just couldn't figure out how to include the translation table in the compressed bit string according the huffman standart. It uses a Node class with a binary tree structure to decompress instead of reading a header with the translation info. 
+The rest of this part of the assignment should be done :)
