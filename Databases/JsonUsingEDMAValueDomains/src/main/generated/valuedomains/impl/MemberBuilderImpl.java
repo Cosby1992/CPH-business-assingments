@@ -30,7 +30,7 @@ public class MemberBuilderImpl implements MemberBuilderMember, MemberBuilderPair
      */
     public MemberBuilderMember pair(Pair pair)
     {
-        if(pair == null) throw new NullPointerException("The field pair in Member may not be null");
+        if(pair == null) throw new NullPointerException("The field pair in the Member ValueDomain may not be null");
         edma_value[0] = ((IValueInstance) pair).edma_getValue();
         return this;
     }

@@ -33,7 +33,7 @@ public class PairBuilderImpl implements PairBuilderKey, PairBuilderValue
      */
     public PairBuilderValue key(Key key)
     {
-        if(key == null) throw new NullPointerException("The field key in Pair may not be null");
+        if(key == null) throw new NullPointerException("The field key in the Pair ValueDomain may not be null");
         edma_value[0] = ((IValueInstance) key).edma_getValue();
         return this;
     }
@@ -46,7 +46,7 @@ public class PairBuilderImpl implements PairBuilderKey, PairBuilderValue
     public PairBuilderValue key(String key) throws InvalidValueException
     {
         if(key != null) KeyImpl.edma_validate(key);
-        if(key == null) throw new NullPointerException();
+        if(key == null) throw new NullPointerException("The field key in the Pair ValueDomain may not be null");
         edma_value[0] = KeyImpl.edma_create(key);
         return this;
     }
@@ -58,7 +58,7 @@ public class PairBuilderImpl implements PairBuilderKey, PairBuilderValue
      */
     public Pair value(Value value)
     {
-        if(value == null) throw new NullPointerException("The field value in Pair may not be null");
+        if(value == null) throw new NullPointerException("The field value in the Pair ValueDomain may not be null");
         edma_value[1] = ((IValueInstance) value).edma_getValue();
         return new PairImpl(PairImpl.edma_create(edma_value));
     }

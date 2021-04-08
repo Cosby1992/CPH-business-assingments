@@ -1,0 +1,86 @@
+DataModel MyDataModel {
+
+    Action createPerson {
+
+        Description:
+            "Creates a new Person"
+        Input:
+            firstName: Name,
+            lastName: Name,
+            email: Email
+        Output:
+            id: PersonID
+        ErrorCodes:
+            1 - "Email already exists"
+
+    }
+
+    Action createCourse {
+
+        Description:
+            "Creates a new Course"
+        Input:
+            name : Name
+        Output:
+            id: CourseID
+        ErrorCodes:
+            1 - "Name already exists"
+
+    }
+
+    Action assignStudentToCourse {
+        Description:
+            "Assign a Student to a Course"
+        Input:
+            studentID : PersonID,
+            courseID : CourseID
+        ErrorCodes:
+            1 - "Student ID does not exist",
+            2 - "Course ID does not exist",
+            3 - "Student is already enrolled in course"
+    }
+
+    Action assignTeacherToCourse {
+        Description:
+            "Assign a Teacher to a Course"
+        Input:
+            teacherID : PersonID,
+            courseID : CourseID
+        ErrorCodes:
+            1 - "Teacher ID does not exist",
+            2 - "Course ID does not exist",
+            3 - "There can only be one Teacher on a course"
+    }
+
+    View getCourseStudent {
+        Description:
+            "Get all Students from a Course"
+        Input:
+            courseID : CourseID
+        Output:
+            studentList : PersonList
+        ErrorCodes:
+            1 - "Course ID does not exist"
+    }
+
+    View getCourseTeacher {
+        Description:
+            "Get Teacher from a Course"
+        Input:
+            courseID : CourseID
+        Output:
+            teacher? : Person
+        ErrorCodes:
+            1 - "Course ID does not exist"
+    }
+
+
+    View getAllPersons {
+        Description:
+            "Get all Persons"
+        Output:
+            personList : PersonList
+    }
+
+
+}

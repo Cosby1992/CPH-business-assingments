@@ -1,0 +1,44 @@
+//Date
+ValueDomain Year : Integer[0..9999]
+ValueDomain Month : Integer[1..12]
+ValueDomain DayOfMonth : Integer[1..31]
+ValueDomain Date : Struct{year:Year, month:Month, day:DayOfMonth} Constraints[validDate]
+//Time
+ValueDomain Hour : Integer[0..23]
+ValueDomain Minute : Integer[0..59]
+ValueDomain Second : Integer[0..59]
+ValueDomain Millisecond : Integer[0..999]
+ValueDomain Time : Struct{hour:Hour, min:Minute, second:Second, milliseconds:Millisecond}
+//DateTime
+ValueDomain DateAndTime : Struct{date:Date, time:Time}
+
+//Name
+ValueDomain Name : String[1..MAX]
+
+//Email
+ValueDomain Email : String[3..MAX]
+["^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"]
+
+//Mobile
+ValueDomain Mobile : String[8]["[0-9]+"]
+
+//Address
+ValueDomain AddressLine : String[1..MAX]
+ValueDomain City : String[1..MAX]
+ValueDomain ZipCode : Integer[1000..9999]
+
+ValueDomain Address : Struct
+{
+	line1 : AddressLine,
+	line2? : AddressLine,
+	city : City,
+	zipCode : ZipCode
+}
+
+//Numbers
+ValueDomain AnyInt : Integer[MIN..MAX]
+ValueDomain PosInt : Integer[1..MAX]
+ValueDomain NotNegInt : Integer[0..MAX]
+
+//Any String
+ValueDomain AnyString : String[MIN..MAX]

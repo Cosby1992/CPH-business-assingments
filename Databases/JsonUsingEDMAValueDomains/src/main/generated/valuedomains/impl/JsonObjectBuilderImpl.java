@@ -29,7 +29,7 @@ public class JsonObjectBuilderImpl implements JsonObjectBuilderMember
      */
     public JsonObject member(Member member)
     {
-        if(member == null) throw new NullPointerException("The field member in JsonObject may not be null");
+        if(member == null) throw new NullPointerException("The field member in the JsonObject ValueDomain may not be null");
         edma_value[0] = ((IValueInstance) member).edma_getValue();
         return new JsonObjectImpl(JsonObjectImpl.edma_create(edma_value));
     }
