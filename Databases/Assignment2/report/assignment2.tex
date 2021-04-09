@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{cite}
+\usepackage{listings}
 
 
 \title{Databases for Developers - Assignment 2}
@@ -8,6 +9,8 @@
 
 \begin{document}
 \maketitle
+
+\newpage
 
 \section{Task 1 - investigation}
 Produce a small writeup (around 300 words) answering the following questions.
@@ -147,6 +150,181 @@ HBase internally uses a compression that is a combination of LZ77 and Huffman Co
 \end{enumerate}
 
 
+We have drawn the huffman tree in paint, a png image can be found in \verb|/huffman_coding/extra/HuffmanTree.png|.
+It's also printed to the console when running the project. An expected output can be found in the readme of the \verb|huffman_coding| folder.
+
+\section{Task 4 - Map and Reduce}
+Solve the following using Javascript, for example in your browser’s developer console.
+\begin{enumerate}
+    \item Map the list of numbers to a list of their square roots: [1, 9, 16, 100]
+    \item Map the list of words so each is wrapped in a <h1> tag: [“Intro”, “Requirements”, “Analysis”, “Implementation”, “Conclusion”, “Discussion”, “References”]
+    \item Use map to uppercase the words (all letters): [“i’m”, “yelling”, “today”]
+    \item Use map to transform words into their lengths: [“I”, “have”, “looooooong”, “words”]
+    \item Get the json file comics.json from the course site. Paste it into your browser’s Javascript console. Use map to get all the image urls, and wrap them in img-tags.
+    \item Use reduce to sum the array of numbers: [1,2,3,4,5]
+    \item Use reduce to sum the x-value of the objects in the array: [{x: 1},{x: 2},{x: 3}]
+    \item Use reduce to flatten an array of arrays: [[1,2],[3,4],[5,6]]
+    \item Use reduce to return an array of the positive numbers: [-3, -1, 2, 4, 5]
+\end{enumerate}
+
+\subsection{Map the list of numbers to a list of their square roots: [1, 9, 16, 100]}
+\lstset{language=Java}
+To map the list of numbers to their square roots can be completed in Javascript like so:
+\begin{lstlisting}
+    numbers = [1, 9, 16, 100];
+    squared = numbers.map(item => (item * item));
+    console.log(squared);
+
+    // Expected output:
+    // Array(4) [ 1, 81, 256, 10000 ]
+
+\end{lstlisting}
+
+\subsection{Map the list of words so each is wrapped in a <h1> tag: [“Intro”, “Requirements”, “Analysis”, “Implementation”, “Conclusion”, “Discussion”, “References”]}
+To wrap the words with <h1> using the map function in Javascript can be done like so:
+\begin{lstlisting}
+    titles = ["Intro", "Re-quirements", "Analysis", 
+    "Implementation", "Conclusion", "Discussion",
+    "References"];
+
+    hOnes = titles.map(item => "<h1>"+item+"</h1>");
+    console.log(hOnes);
+
+    // Expected output:
+    // Array(7) [ "<h1>Intro</h1>", "<h1>Re-quirements</h1>", 
+    // "<h1>Analysis</h1>", "<h1>Implementation</h1>", 
+    // "<h1>Conclusion</h1>", "<h1>Discussion</h1>", 
+    // "<h1>References</h1>" ]
+
+\end{lstlisting}
+
+\subsection{Use map to uppercase the words (all letters): [“i’m”, “yelling”, “today”]}
+To map the words to uppercase using the map function in Javascript can be completed like so:
+\begin{lstlisting}
+    lower = ["i'm", "yelling", "today"];
+    capital = lower.map(item => item.toUpperCase());
+    console.log(capital);
+
+    // Expected output:
+    // Array(3) ["I'M", "YELLING", "TODAY"]
+
+\end{lstlisting}
+
+\subsection{Use map to transform words into their lengths: [“I”, “have”, “looooooong”, “words”]}
+To map the words their respective lengths using the map function in Javascript can be done like so:
+\begin{lstlisting}
+    words =  ["I", "have", "looooooong","words"];
+    leng = words.map(item => item.length);
+    console.log(leng);
+
+    // Expected output:
+    // Array(4) [ 1, 4, 10, 5 ]
+
+\end{lstlisting}
+
+\subsection{Get the json file comics.json from the course site. Paste it into your browser’s Javascript console. Use map to get all the image urls, and wrap them in img-tags}
+To wrap the image tags from the json file using the map function in Javascript can be done like so:
+\begin{lstlisting}
+    
+    // Read the json from comics.json and 
+    // when you have the json object in a 
+    // variable in Javascript, you can 
+    // map the image-tags around the image
+    // keys in the json object as below 
+
+    imgs = json.map((item) => '<img src="' + item.img + '">');
+    console.log(imgs);
+
+    // Expected output:
+    // [
+    //    '<img src="https://imgs.xkcd.com/comics/red_spiders_2.jpg">',
+    //    '<img src="https://imgs.xkcd.com/comics/love.jpg">',
+    //    '<img src="https://imgs.xkcd.com/comics/schrodinger.jpg">',
+    //    '<img src="https://imgs.xkcd.com/comics/secrets.jpg">',
+    //    '<img src="https://imgs.xkcd.com/comics/counter-red-spiders.jpg">',
+    //    '<img src="https://imgs.xkcd.com/comics/found.jpg">',
+    //    '<img src="https://imgs.xkcd.com/comics/want.jpg">',
+    //    '<img src="https://imgs.xkcd.com/comics/penny_arcade.jpg">'
+    //  ]
+
+\end{lstlisting}
+
+\subsection{Use reduce to sum the array of numbers: [1,2,3,4,5]}
+\lstset{language=Java}
+To reduce the list of numbers to their sum, can be completed in Javascript like so:
+\begin{lstlisting}
+    const numbers = [1,2,3,4,5];
+
+    const reduced = numbers.reduce((total, num) => {
+        return total + num
+    }, 0);
+    console.log(reduced);
+
+    // Expected output:
+    // 15
+
+\end{lstlisting}
+
+\subsection{Use reduce to sum the x-value of the objects in the array: [{x: 1},{x: 2},{x: 3}]}
+\lstset{language=Java}
+To map the list of numbers to their square roots can be completed in Javascript like so:
+\begin{lstlisting}
+    // reduce the x values in the objects to their sum
+    const objects = [{x: 1},{x: 2},{x: 3}];
+
+    const reducedX = objects.reduce((total, object) => {
+        return total + object.x
+    }, 0);
+
+    console.log(reducedX);
+
+    // Expected output:
+    // 6
+
+\end{lstlisting}
+
+
+\subsection{Use reduce to flatten an array of arrays: [[1,2],[3,4],[5,6]]}
+\lstset{language=Java}
+To reduce the array to a flattened array, the following procedure can be followed in Javascript:
+\begin{lstlisting}
+    const arrayToFlatten = [[1,2],[3,4],[5,6]];
+
+    const flattenedArray = arrayToFlatten.reduce((arr, inner) => {
+        arr.push(inner[0])
+        arr.push(inner[1])
+        return arr
+    }, []);
+
+    console.log(flattenedArray);
+
+    // Expected output:
+    // [ 1, 2, 3, 4, 5, 6 ]
+
+\end{lstlisting}
+
+\subsection{Use reduce to return an array of the positive numbers: [-3, -1, 2, 4, 5]}
+\lstset{language=Java}
+To return only the positive numbers in an array using reduce, the following procedure can be followed in Javascript:
+\begin{lstlisting}
+    const reduceToPositiveNumbers = [-3, -1, 2, 4, 5]
+
+    const positiveNumberArray = reduceToPositiveNumbers.reduce((arr, number) => {
+        if(number >= 0){
+            arr.push(number)
+        }
+        return arr
+    }, [])
+
+    console.log(positiveNumberArray);
+
+    // Expected output:
+    // [ 2, 4, 5 ]
+
+\end{lstlisting}
+
+
+\newpage
 
 \bibliography{bibliography}{}
 \bibliographystyle{plain}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.19)  8 APR 2021 00:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.19)  9 APR 2021 23:38
 entering extended mode
 **c:/code/cphbusiness/Databases/Assignment2/report/assignment2.tex
 (c:/code/cphbusiness/Databases/Assignment2/report/assignment2.tex
@@ -23,68 +23,182 @@ File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
-) (C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty (C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+\lst@mode=\count185
+\lst@gtempboxa=\box47
+\lst@token=\toks16
+\lst@length=\count186
+\lst@currlwidth=\dimen139
+\lst@column=\count187
+\lst@pos=\count188
+\lst@lostspace=\dimen140
+\lst@width=\dimen141
+\lst@newlines=\count189
+\lst@lineno=\count190
+\lst@maxwidth=\dimen142
+ (C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count191
+\lst@skipnumbers=\count192
+\lst@framebox=\box48
+) (C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count185
-\l__pdf_internal_box=\box47
+\l__kernel_color_stack_int=\count193
+\l__pdf_internal_box=\box49
 ) (c:/code\cphbusiness\Databases\Assignment2\report\assignment2.aux)
 \openout1 = `assignment2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+\c@lstlisting=\count194
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 10.
+(Font)              <12> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 10.
+(Font)              <8> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 10.
+(Font)              <6> on input line 11.
  [1
 
-{C:/Users/Cosby/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+{C:/Users/Cosby/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 69.
+(Font)              <7> on input line 72.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 69.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+(Font)              <5> on input line 72.
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--99
+Underfull \hbox (badness 10000) in paragraph at lines 100--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
-[3] [4] (c:/code\cphbusiness\Databases\Assignment2\report\assignment2.bbl) [5] (c:/code\cphbusiness\Databases\Assignment2\report\assignment2.aux) ) 
+[4] [5]
+Overfull \hbox (1.88962pt too wide) in paragraph at lines 162--163
+[]\OT1/cmr/m/n/10 Use map to trans-form words into their lengths: [\I", \have", \looooooong",
+ []
+
+(C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 175.
+ (C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 175.
+ [6]
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 194.
+
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 194--195
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[7]
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 235--236
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 240--241
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 241--242
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 242--243
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 243--244
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (117.0047pt too wide) in paragraph at lines 244--245
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 245--246
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 246--247
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 247--248
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 258.
+(C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 258.
+ [8]
+Overfull \hbox (7.9834pt too wide) in paragraph at lines 287--287
+[]\OT1/cmr/bx/n/12 Use re-duce to flat-ten an ar-ray of ar-rays: [[1,2],[3,4],[5,6]] 
+ []
+
+
+Overfull \hbox (51.00403pt too wide) in paragraph at lines 293--294
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (141.00494pt too wide) in paragraph at lines 312--313
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9] [10] (c:/code\cphbusiness\Databases\Assignment2\report\assignment2.bbl) [11] (c:/code\cphbusiness\Databases\Assignment2\report\assignment2.aux) ) 
 Here is how much of TeX's memory you used:
- 530 strings out of 479618
- 9509 string characters out of 2865026
- 284341 words of memory out of 3000000
- 17764 multiletter control sequences out of 15000+200000
- 408366 words of font info for 43 fonts, out of 3000000 for 9000
+ 2323 strings out of 479618
+ 33442 string characters out of 2865026
+ 534016 words of memory out of 3000000
+ 19529 multiletter control sequences out of 15000+200000
+ 408911 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,6n,50p,376b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Cosby\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on c:/code\cphbusiness\Databases\Assignment2\report\assignment2.pdf (5 pages, 128541 bytes).
+ 52i,6n,60p,376b,1531s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Cosby\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti1000.pk> <C:\Users\Cosby\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on c:/code\cphbusiness\Databases\Assignment2\report\assignment2.pdf (11 pages, 169758 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
+ 90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
