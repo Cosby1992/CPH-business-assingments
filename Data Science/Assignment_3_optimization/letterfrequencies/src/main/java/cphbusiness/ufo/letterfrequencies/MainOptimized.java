@@ -1,4 +1,4 @@
-package cphbusiness.ufo.letterfrequencies;
+package src.main;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
