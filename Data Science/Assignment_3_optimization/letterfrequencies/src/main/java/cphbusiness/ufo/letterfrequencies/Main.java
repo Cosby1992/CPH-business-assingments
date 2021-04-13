@@ -19,9 +19,14 @@ import static java.util.stream.Collectors.toMap;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
+        
+        String cosbyPath = "letterfrequencies/src/main/resources/FoundationSeries.txt";
+        String dimaPath = "...//";
+        
         Timer timer = new Timer();
 
-        String fileName = "C:\\Users\\Support\\IdeaProjects\\CPH-business-assingments\\Data Science\\Assignment_3_optimization\\letterfrequencies\\src\\main\\resources\\FoundationSeries.txt";
+        String fileName = cosbyPath;
+        //String fileName = dimaPath;
         Reader reader = new FileReader(fileName);
         Map<Integer, Long> freq = new HashMap<>();
         timer.start();
@@ -31,7 +36,7 @@ public class Main {
 
         print_tally(freq);
         long stop = timer.milliNow();
-        System.out.println("Tally chars execution time: " + stop  + "ms");
+        System.out.println("Total execution time: " + stop  + "ms");
     }
 
     private static void tallyChars(Reader reader, Map<Integer, Long> freq) throws IOException {

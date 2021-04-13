@@ -1,15 +1,10 @@
 package cphbusiness.ufo.letterfrequencies;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-import static java.util.stream.Collectors.toMap;
 
 /**
  * Frequency analysis Inspired by
@@ -23,69 +18,99 @@ public class MainOptimized {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        Timer timer = new Timer();
+        // path to text-file to count letter frequencies
+        String cosbyPath = "letterfrequencies/src/main/resources/FoundationSeries.txt";
+        String dimaPath = "...//";
 
+        String fileName = cosbyPath;
+        //String fileName = dimaPath;
+
+        // Creating input stream for the file
+        Reader fileReader = new FileReader(fileName);
+
+        // OPTIMIZED: Using a buffered reader instead of the raw FileReader
+        Reader reader = new BufferedReader(fileReader);
         
-        String fileName = "C:\\Users\\Support\\IdeaProjects\\CPH-business-assingments\\Data Science\\Assignment_3_optimization\\letterfrequencies\\src\\main\\resources\\FoundationSeries.txt";
-        Reader reader = new FileReader(fileName);
+        // OPTIMIZED: Using a normal array with length 26 representing 
+        // the english alphabet fx. index 0 = frequency of A, index 1 = frequency of B, etc...
+        // instead of a HashMap<Integer, Long>
         int[] freq =
                 {0,0,0,0,0,
                  0,0,0,0,0,
                  0,0,0,0,0,
                  0,0,0,0,0,
                  0,0,0,0,0,0};
-        timer.start();
-        tallyChars(reader, freq);
-        long step = timer.milliNow();
-        System.out.println("Tally chars execution time: " + step + "ms");
 
+        // Starting timer to time the two methods
+        Timer timer = new Timer();
+        timer.start();
+
+        // Count word frequencies using the 
+        // buffered reader and the freq array
+        tallyChars(reader, freq);
+
+        // Get time for first method and print it to console
+        long step = timer.milliNow(); 
+        // OBS: print should be removed when taking time on entire program
+        System.out.println("Tally chars execution time: " + step + "ms");
+        
+        // Print the letters and frequencies to the console
         print_tally(freq);
+
+        // Get time for second method and print it to console
         long stop = timer.milliNow();
         System.out.println("Tally chars execution time: " + stop + "ms");
     }
 
+    /**
+     * This method reads each character from a file (buffered reader), 
+     * and adds their frequencies to their respective index in the array
+     * @param reader Reader created with a file path
+     * @param integerArray Array to hold the frequencies of the letters (index 0 = frequency of A, index 1 = frequency of B, etc...)
+     * @throws IOException Error reading the file
+     */
     private static void tallyChars(Reader reader, int[] integerArray) throws IOException {
-        //hashmap = prepareHashmap(hashmap);
-        int b;
-
-        /**
-         E          T         A         O         N
-         I         S         R         H         D
-         L         U         C         M         Y
-         F         W         G         P         B
-         V         K         X         Q         J
-         Z
-         */
         
+        // integer to hold value from reader, 
+        // value is between 0-65535
+        int b;
+        
+        
+        // Loop until end of file
         while ((b = reader.read()) != -1) {
-            // 97=76012 = A
-            // 122=674 = Z
-            b= b-97;
-            if(b < 0 || b > 25) continue;
-            integerArray[b] += 1;
-           // hashmap.put(b, hashmap.get(b) + 1);
-        }
 
+            // If the value is not a letter 
+            // between a and z -> skip iteration
+            // 97 = A
+            // 122 = Z
+            if(b < 97 || b > 122) continue;
+
+            // A = 97
+            // Letter - 97 -> Index in array
+            // Increment index to represent frequency of that letter 
+            integerArray[b-97] += 1;
+        }
 
     }
 
+    /**
+     * This method prints the values from an array of frequencies
+     * ordered with index 0 = frequency of A, index 1 = frequency of B, etc...
+     * @param freq array of frequencies
+     */
     private static void print_tally(int[] freq) {
 
+        // Iterate through the frequencies
         for (int i = 0; i<freq.length; i++){
+
+            //build a char from the index by adding 97 (ASCII 97 = 'A') 
             char letter = (char) (i+97);
-            System.out.println("Letter: "+letter+" is present "+freq[i]+" times");
+
+            // Print the letter and the frequency fx. "a : 76011"
+            System.out.println(letter+" : "+ freq[i]);
         }
 
     }
 
-    private static Map<Integer, Long> prepareHashmap(Map<Integer, Long> map) {
-
-        //0 - 65535
-        for (int i = 0; i < 65536; i++) {
-            map.put(i, 0L);
-        }
-
-        return map;
-    }
 }
 
