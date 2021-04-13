@@ -1,4 +1,4 @@
-package src.main;
+package cphbusiness.ufo.letterfrequencies;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
 import static java.util.stream.Collectors.toMap;
 
 /**
@@ -25,51 +26,56 @@ public class MainOptimized {
         Timer timer = new Timer();
 
         
-        String fileName = "letterfrequencies/src/main/resources/FoundationSeries.txt";
+        String fileName = "C:\\Users\\Support\\IdeaProjects\\CPH-business-assingments\\Data Science\\Assignment_3_optimization\\letterfrequencies\\src\\main\\resources\\FoundationSeries.txt";
         Reader reader = new FileReader(fileName);
-        Map<Integer, Long> freq = new HashMap<>();
+        int[] freq =
+                {0,0,0,0,0,
+                 0,0,0,0,0,
+                 0,0,0,0,0,
+                 0,0,0,0,0,
+                 0,0,0,0,0,0};
         timer.start();
         tallyChars(reader, freq);
-        long step = timer.step();
-        System.out.println("Tally chars execution time: " + step / 1_000_000 + "ms");
+        long step = timer.milliNow();
+        System.out.println("Tally chars execution time: " + step + "ms");
 
         print_tally(freq);
-
-        long stop = timer.stop();
-        System.out.println("Tally chars execution time: " + stop / 1_000_000 + "ms");
+        long stop = timer.milliNow();
+        System.out.println("Tally chars execution time: " + stop + "ms");
     }
 
-    private static void tallyChars(Reader reader, Map<Integer, Long> hashmap) throws IOException {
-        hashmap = prepareHashmap(hashmap);
+    private static void tallyChars(Reader reader, int[] integerArray) throws IOException {
+        //hashmap = prepareHashmap(hashmap);
         int b;
+
+        /**
+         E          T         A         O         N
+         I         S         R         H         D
+         L         U         C         M         Y
+         F         W         G         P         B
+         V         K         X         Q         J
+         Z
+         */
         
         while ((b = reader.read()) != -1) {
             // 97=76012 = A
             // 122=674 = Z
-            if(b < 97 || b > 122) continue;
-            
-            hashmap.put(b, hashmap.get(b) + 1);
+            b= b-97;
+            if(b < 0 || b > 25) continue;
+            integerArray[b] += 1;
+           // hashmap.put(b, hashmap.get(b) + 1);
         }
 
 
     }
 
-    private static void print_tally(Map<Integer, Long> freq) {
-        int dist = 'a' - 'A';
-        Map<Character, Long> upperAndlower = new LinkedHashMap();
-        for (Character c = 'A'; c <= 'Z'; c++) {
-            upperAndlower.put(c, freq.getOrDefault(c, 0L) + freq.getOrDefault(c + dist, 0L));
+    private static void print_tally(int[] freq) {
+
+        for (int i = 0; i<freq.length; i++){
+            char letter = (char) (i+97);
+            System.out.println("Letter: "+letter+" is present "+freq[i]+" times");
         }
-        Map<Character, Long> sorted = upperAndlower
-                .entrySet()
-                .stream()
-                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
-                .collect(
-                        toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
-                                LinkedHashMap::new));
-        for (Character c : sorted.keySet()) {
-            System.out.println("" + c + ": " + sorted.get(c));;
-        }
+
     }
 
     private static Map<Integer, Long> prepareHashmap(Map<Integer, Long> map) {
