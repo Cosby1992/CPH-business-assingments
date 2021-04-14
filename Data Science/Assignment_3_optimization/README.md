@@ -10,4 +10,11 @@ The ```letterfrequencies``` folder contains both the original letter frequency p
 The java files (normal and optimized) can be found in ```letterfrequencies\src\main\java\cphbusiness\ufo\letterfrequencies``` together with an output folder witch contains the most recent 500 run-times in csv file from both the normal and optimized runs. 
 
 # To run
-Download this folder, you can use this link so you don't have to clone the entire repo. 
+1. Download this folder, you can use this link so you don't have to clone the entire repo. https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Cosby1992/CPH-business-assingments/tree/master/Data%20Science/Assignment_3_optimization 
+
+2. Run the file you are interested in from ```letterfrequencies\src\main\java\cphbusiness\ufo\letterfrequencies```
+
+# Troubleshoot
+If you are using IntelliJ it can be nessesary to change the root director for the project as well as maybe changing the output folder. 
+
+These settings can be changed from ```file -> project structure -> project```
