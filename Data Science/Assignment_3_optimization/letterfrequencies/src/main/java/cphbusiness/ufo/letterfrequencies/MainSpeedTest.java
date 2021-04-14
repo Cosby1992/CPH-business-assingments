@@ -18,6 +18,9 @@ import static java.util.stream.Collectors.toMap;
  */
 public class MainSpeedTest {
 
+    // Number of times to run the program save run-times
+    private final static int iterations = 500;
+
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
         // path to text-file to count letter frequencies
@@ -41,7 +44,7 @@ public class MainSpeedTest {
         // Timer to time the two methods
         Timer timer = new Timer();
 
-        for (long i = 0; i < 500; i++) {
+        for (long i = 0; i < iterations; i++) {
             
             // Running the execution times and writing the to a csv file
             writeExecutionTimesToCsvFile(writer, fileName, timer);

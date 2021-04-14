@@ -3,6 +3,10 @@
 \usepackage{xurl}
 \usepackage{listings}
 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+\usepgfplotslibrary{statistics}
+
 
 \author{Anders Jacobsen, Dima Karaush}
 \title{Exploration and Presentation - Assignment 3}
@@ -18,7 +22,17 @@
 \section*{Intro}
 We are using the project Letter Frequencies downloaded 
 from \url{https://github.com/CPHBusinessSoftUFO/letterfrequencies} 
-in this paper. 
+in this paper.
+
+\section*{System Information}
+Computer specs used to optimize: 
+OS Name:                   Microsoft Windows 10 Pro
+OS Version:                10.0.19042 N/A Build 19042
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 165 Stepping 5 GenuineIntel ~3792 Mhz
+BIOS Version:              American Megatrends Inc. 1.10, 21-05-2020
+Total Physical Memory:     32.688 MB
 
 \section{Task 1}
 \begin{enumerate}
@@ -56,12 +70,102 @@ of the run-times of both the optimized and non-optimized classes. The way we do 
 is by creating a loop and then run the two methods for a specified amount of iterations
 and writing each iterations run-time to a CSV file for the analysis. 
 
+We've chosen to use 500 continuous measurements to calculate the statistics afterwords.
+
 
 \subsection{Make it at least 50\% faster}
+The task was to make the program 50\% faster, and that has been achieved. 
+Below are some tables and statistics along with a box-plot descriping our results.
+
+\begin{tabular}{ l l l }
+                & Normal        & Optimized \\ 
+    Mean        & 46,562ms      & 23,232ms \\  
+    Std. dev    & 3,351510293   & 0,571690178 \\
+    Min         & 40ms          & 23ms \\
+    1. Quatile  & 46ms          & 23ms \\
+    Median      & 47ms          & 23ms \\
+    3. Quartile & 47ms          & 23ms \\
+    Max         & 99ms          & 26ms    
+\end{tabular}
+
+ 
+From this data it is possible to create a box-plot to visualize the difference. 
+\newline
+
+\begin{tikzpicture}
+    \begin{axis}
+      [
+      ytick={1,2},
+      yticklabels={Normal, Optimized},
+      ]
+      \addplot+[
+      boxplot prepared={
+        median=47,
+        upper quartile=47,
+        lower quartile=46,
+        upper whisker=99,
+        lower whisker=40
+      },
+      ] coordinates {};
+      \addplot+[
+      boxplot prepared={
+        median=23,
+        upper quartile=23,
+        lower quartile=23,
+        upper whisker=26,
+        lower whisker=23
+      },
+      ] coordinates {};
+    \end{axis}
+  \end{tikzpicture}
+
+As it can be seen in the box-plot, there is a few outliers that could be removed. Esspecially from the Normal plot. 
+With the ouliers removed, the new boxplot looks like the plot below: 
+\newline
+\begin{tikzpicture}
+    \begin{axis}
+      [
+      ytick={1,2},
+      yticklabels={Normal, Optimized},
+      ]
+      \addplot+[
+      boxplot prepared={
+        median=47,
+        upper quartile=47,
+        lower quartile=46,
+        upper whisker=50,
+        lower whisker=43
+      },
+      ] coordinates {};
+      \addplot+[
+      boxplot prepared={
+        median=23,
+        upper quartile=23,
+        lower quartile=23,
+        upper whisker=24,
+        lower whisker=23
+      },
+      ] coordinates {};
+    \end{axis}
+  \end{tikzpicture}
+
+It is now possible to see that not only did we improve a whole lot on the execution-time,
+but we have also stabilized the system a whole lot. This is visible from observing the 
+whiskers on each entry in the box-plot. 
+As it is visible from the results table, the results have improved by a whole lot, 
+but how much exactly? This depends on what you are measuring, we've decided that 
+two of the numbers we can use to illustrate the improvements are the Mean and the 
+Median. Therefore we have calculated how much the run-times have improved in percent. 
+The results can be seen below: \newline
+
+\begin{tabular}{ l l }
+Mean improvement & 50,11\% \\
+Median improvement & 51,06\% \\ 
+\end{tabular}
 
 \subsubsection*{Results}
-
-
-
+In conclution we have improved the program by approx. 50\%-51\%. 
+But what is also worth noticing is the stabilization of the execution-times
+with our optimized solution. 
 
 \end{document}
