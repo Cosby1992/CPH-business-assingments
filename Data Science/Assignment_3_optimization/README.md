@@ -1,6 +1,6 @@
 # Optimization
 This repo contains a program called Letter frequencies as well as classes with optimizations of this code. 
-To read about our results and see box-plots descriping the optimization in execution times see the file ```AssignmentTurnIn.pdf``` witch is written in LaTeX. 
+To read about our results and see box-plots descriping the optimization in execution times see the file ```Assignment.pdf``` witch is written in LaTeX. 
 
 # Roadmap
 The ```assignemnt``` folder contains the original assignment handed to us by CBH business. 
@@ -15,6 +15,6 @@ The java files (normal and optimized) can be found in ```letterfrequencies\src\m
 2. Run the file you are interested in from ```letterfrequencies\src\main\java\cphbusiness\ufo\letterfrequencies```
 
 # Troubleshoot
-If you are using IntelliJ it can be nessesary to change the root director for the project as well as maybe changing the output folder. 
+If you are using IntelliJ it can be nessesary to change the root directory for the project as well as maybe changing the output folder. 
 
-These settings can be changed from ```file -> project structure -> project```
+These settings can be changed from ```file -> project structure -> project```.

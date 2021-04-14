@@ -19,13 +19,13 @@
 \tableofcontents
 
 \newpage
-\section*{Intro}
+\section{Intro}
 We are using the project Letter Frequencies downloaded 
 from \url{https://github.com/CPHBusinessSoftUFO/letterfrequencies} 
 in this paper. The entire project with all files can be found here 
 \url{https://github.com/Cosby1992/CPH-business-assingments/tree/master/Data%20Science/Assignment_3_optimization}.
 
-\section*{System Information}
+\section{System Information}
 \begin{tabular}{ l l }
 OS Name                 & Microsoft Windows 10 Pro \\ 
 OS Version              & 10.0.19042 N/A Build 19042 \\  
@@ -36,7 +36,7 @@ Total Physical Memory   & 32.688 MB \\
 Disc(s)                 & Force Series™ MP510 980GB M.2 SSD (up to 3480MB/sec read)
 \end{tabular}
 
-\section*{Enviroment}
+\section{Enviroment}
 \begin{tabular}{ l l }
 IDE                     & Visual Studio Code \\ 
 IDE version             & 1.55.2 x64 \\  
@@ -44,7 +44,7 @@ Language                & Java \\
 Language Version        & 15 \\
 \end{tabular}
 
-\section{Task 1}
+\section{Analysis - Task 1}
 \begin{enumerate}
     \item Find a point in your program that can be optimized (for speed), 
     for ex-ample by using a profiler
@@ -67,7 +67,20 @@ as shown in the list below:
     \item Limiting the while loop to only saving letters A-Z
 \end{enumerate}
 We've decided to measure the two methods in the program ``tallyChars()'' and ``print\_tally()''. 
-We measure them together as a sequence to see the difference execution time on all our optimizations.  
+We measure them together as a sequence to see the difference execution time on all our optimizations. 
+
+\subsection{Bottlenecks}
+\begin{enumerate}
+  \item A bottleneck in this program was the use of a FileReader instead of a BufferedReader. 
+  A buffer when reading a file is a huge advantage and can significantly improve reading times of the file.
+  \item Another bottleneck in this program was that there were no checks on weather it was needed to count 
+  the frequency of the data. It should be limited to only count characters a-z.
+  \item The use of a HashMap and LinkedHashMap instead of primitive data type array. It is much faster to 
+  write a number to a now location in an Array than to add to values to a HashMap or LinkedHashMap.
+\end{enumerate}
+A bottleneck in this program was the use of a FileReader instead of a BufferedReader. 
+A buffer when reading a file is a huge advantage and can significantly improve reading times of the file. 
+
 
 \subsection{Make a measurement of the point to optimize}
 To make measurements we first had to create a timer that supports our 
@@ -177,5 +190,9 @@ Median improvement & 51,06\% \\
 In conclution we have improved the program by approx. 50\%-51\%. 
 But what is also worth noticing is the stabilization of the execution-times
 with our optimized solution. 
+
+\section{Steps to reproduce}
+Go to \url{https://github.com/Cosby1992/CPH-business-assingments/tree/master/Data%20Science/Assignment_3_optimization} 
+and follow the instructions from the README.md
 
 \end{document}
