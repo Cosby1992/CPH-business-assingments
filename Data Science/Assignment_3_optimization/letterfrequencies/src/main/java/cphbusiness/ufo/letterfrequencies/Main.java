@@ -21,6 +21,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
         String cosbyPath = "letterfrequencies/src/main/resources/FoundationSeries.txt";
+        //String cosbyPath = "letterfrequencies/src/main/resources/bible.txt";
+        //String cosbyPath = "letterfrequencies/src/main/resources/world192.txt";
         String dimaPath = "...//";
         
         Timer timer = new Timer();

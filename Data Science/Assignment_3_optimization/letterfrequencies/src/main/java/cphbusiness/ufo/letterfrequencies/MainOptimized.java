@@ -19,7 +19,8 @@ public class MainOptimized {
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
         // path to text-file to count letter frequencies
-        String cosbyPath = "letterfrequencies/src/main/resources/FoundationSeries.txt";
+        //String cosbyPath = "letterfrequencies/src/main/resources/FoundationSeries.txt";
+        String cosbyPath = "letterfrequencies/src/main/resources/world192.txt";
         String dimaPath = "...//";
 
         String fileName = cosbyPath;

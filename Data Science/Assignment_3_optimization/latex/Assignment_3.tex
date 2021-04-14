@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{xurl}
+\usepackage{listings}
 
 
 \author{Anders Jacobsen, Dima Karaush}
@@ -30,10 +31,35 @@ in this paper.
 \end{enumerate}
 
 \subsection{Find a point in your program that can be optimized}
+We did not use a profiler. The reason is that we could not get 
+the profiler to run in Visual Studio Code. We have however located 
+multiple points in the program that can be optimized. Since we are 
+reading a relatively big text-file, we believe it is here we can 
+optimize the most. We took multiple steps to make the program faster
+as shown in the list below:
+\begin{enumerate}
+    \item Upgrading the FileReader to a BufferedReader.
+    \item Replacing the ``HashMap\textless Integer, Long\textgreater`` with a ``int[]``
+    \item Limiting the while loop to only saving letters A-Z
+\end{enumerate}
+We've decided to measure the two methods in the program ``tallyChars()'' and ``print\_tally()''. 
+We measure them together as a sequence to see the difference execution time on all our optimizations.  
 
 \subsection{Make a measurement of the point to optimize}
+To make measurements we first had to create a timer that supports our 
+measurements. The timer class can be found in 
+``letterfrequencies/src/main/java/cphbusiness/ufo/letterfrequencies/Timer.java''.
+
+\subsubsection*{Procedure}
+We've decided to make multiple measurements in order to create a realistic image 
+of the run-times of both the optimized and non-optimized classes. The way we do this
+is by creating a loop and then run the two methods for a specified amount of iterations
+and writing each iterations run-time to a CSV file for the analysis. 
+
 
 \subsection{Make it at least 50\% faster}
+
+\subsubsection*{Results}
 
 
 
