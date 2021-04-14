@@ -1,3 +1,10 @@
+# Quick links 
+[Assignment written in latex]: https://github.com/Cosby1992/CPH-business-assingments/blob/master/Data%20Science/Assignment_3_optimization/Assignment.pdf
+
+[Folder with java files]: https://github.com/Cosby1992/CPH-business-assingments/tree/master/Data%20Science/Assignment_3_optimization/letterfrequencies/src/main/java/cphbusiness/ufo/letterfrequencies
+
+[Assignment from CBH business]: https://github.com/Cosby1992/CPH-business-assingments/blob/master/Data%20Science/Assignment_3_optimization/assignment/assignment-03.pdf
+
 # Optimization
 This repo contains a program called Letter frequencies as well as classes with optimizations of this code. 
 To read about our results and see box-plots descriping the optimization in execution times see the file ```Assignment.pdf``` witch is written in LaTeX. 
