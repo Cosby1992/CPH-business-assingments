@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.19)  14 APR 2021 15:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.19)  14 APR 2021 16:10
 entering extended mode
 **"c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.tex"
 ("c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.tex"
@@ -356,35 +356,39 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout4 = `Assignment_3.toc'.
 
  [2]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 56.
- (C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+Overfull \hbox (70.31578pt too wide) in paragraph at lines 29--38
+[] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 66.
+(C:\Users\Cosby\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 56.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 66.
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 152--160
+Underfull \hbox (badness 10000) in paragraph at lines 162--170
 
  []
 
-[5] ("c:/code\cphbusiness\Data Science\Assignment_3_optimization\latex\Assignment_3.aux") ) 
+[5] [6] ("c:/code\cphbusiness\Data Science\Assignment_3_optimization\latex\Assignment_3.aux") ) 
 Here is how much of TeX's memory you used:
- 23551 strings out of 479618
- 621198 string characters out of 2865026
- 1013418 words of memory out of 3000000
- 40387 multiletter control sequences out of 15000+200000
- 407853 words of font info for 42 fonts, out of 3000000 for 9000
+ 23555 strings out of 479618
+ 621255 string characters out of 2865026
+ 1014418 words of memory out of 3000000
+ 40390 multiletter control sequences out of 15000+200000
+ 408188 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,10n,103p,800b,2252s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "c:/code\cphbusiness\Data Science\Assignment_3_optimization\latex\Assignment_3.pdf" (5 pages, 104318 bytes).
+ <C:\Users\Cosby\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on "c:/code\cphbusiness\Data Science\Assignment_3_optimization\latex\Assignment_3.pdf" (6 pages, 109342 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 58 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

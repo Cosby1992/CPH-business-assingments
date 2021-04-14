@@ -1,10 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1618408595 "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.tex" "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.pdf" "Assignment_3" 1618408597
-  "Assignment_3.aux" 1618408596 526 c99fb7838c829747b01e63885eda49b2 "pdflatex"
-  "Assignment_3.tex" 1618408594 5985 acabd6628597c13b139cbb670af7f261 ""
-  "Assignment_3.toc" 1618408596 330 a322da33dba47eafc39dd4271da7f6a0 "pdflatex"
+["pdflatex"] 1618409438 "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.tex" "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.pdf" "Assignment_3" 1618409440
+  "Assignment_3.aux" 1618409439 526 c467c147bac46c9f04cad9a8b963433d "pdflatex"
+  "Assignment_3.tex" 1618409437 6428 9e9e9e01ca408bd23d7c933aeacbe127 ""
+  "Assignment_3.toc" 1618409439 330 e437792353828e2588410f57a8929ce9 "pdflatex"
+  "C:/Users/Cosby/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1614441896 11548 ab18e5c23b7fdd75ab9fe2b83a7f91d6 ""
   "C:/Users/Cosby/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1613733369 9293901 16b57d5c07b24ae2f028344165dace32 ""
   "C:/Users/Cosby/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1618323656 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+  "C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/Cosby/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -149,12 +151,12 @@
   "C:/Users/Cosby/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Cosby/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1463135581 57049 34128738f682d033422ca125f82e5d62 ""
   "C:/Users/Cosby/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1609353920 4662 bd4dddc91c615ba08c4fa6618ec20bef ""
-  "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.aux" 1618408596 526 c99fb7838c829747b01e63885eda49b2 ""
-  "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.tex" 1618408594 5985 acabd6628597c13b139cbb670af7f261 ""
+  "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.aux" 1618409439 526 c467c147bac46c9f04cad9a8b963433d ""
+  "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.tex" 1618409437 6428 9e9e9e01ca408bd23d7c933aeacbe127 ""
   (generated)
-  "Assignment_3.aux"
   "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.pdf"
-  "Assignment_3.pdf"
   "Assignment_3.toc"
+  "Assignment_3.pdf"
   "Assignment_3.log"
   "c:/code/cphbusiness/Data Science/Assignment_3_optimization/latex/Assignment_3.log"
+  "Assignment_3.aux"
