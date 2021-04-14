@@ -1,9 +1,9 @@
 # Quick links 
-[Assignment written in latex]: https://github.com/Cosby1992/CPH-business-assingments/blob/master/Data%20Science/Assignment_3_optimization/Assignment.pdf
+[Our results/solution written in latex](https://github.com/Cosby1992/CPH-business-assingments/blob/master/Data%20Science/Assignment_3_optimization/Assignment.pdf)
 
-[Folder with java files]: https://github.com/Cosby1992/CPH-business-assingments/tree/master/Data%20Science/Assignment_3_optimization/letterfrequencies/src/main/java/cphbusiness/ufo/letterfrequencies
+[Folder with java files](https://github.com/Cosby1992/CPH-business-assingments/tree/master/Data%20Science/Assignment_3_optimization/letterfrequencies/src/main/java/cphbusiness/ufo/letterfrequencies)
 
-[Assignment from CBH business]: https://github.com/Cosby1992/CPH-business-assingments/blob/master/Data%20Science/Assignment_3_optimization/assignment/assignment-03.pdf
+[Assignment from CBH business](https://github.com/Cosby1992/CPH-business-assingments/blob/master/Data%20Science/Assignment_3_optimization/assignment/assignment-03.pdf)
 
 # Optimization
 This repo contains a program called Letter frequencies as well as classes with optimizations of this code. 
@@ -24,7 +24,7 @@ The java files (normal and optimized) can be found in ```letterfrequencies\src\m
 ```Timer.java``` contains the timer used to measure the execution times. 
 
 # To run
-1. Download this folder, you can use this link so you don't have to clone the entire repo. https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Cosby1992/CPH-business-assingments/tree/master/Data%20Science/Assignment_3_optimization 
+1. Download this folder, you can use this link so you don't have to clone the entire repo -> [downgit link](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Cosby1992/CPH-business-assingments/tree/master/Data%20Science/Assignment_3_optimization) 
 
 2. Run the file you are interested in from ```letterfrequencies\src\main\java\cphbusiness\ufo\letterfrequencies```
 
