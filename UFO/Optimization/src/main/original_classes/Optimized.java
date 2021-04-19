@@ -1,4 +1,4 @@
-package cphbusiness.ufo.letterfrequencies;
+package src.main.original_classes;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -6,28 +6,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 
-/**
- * Frequency analysis Inspired by
- * https://en.wikipedia.org/wiki/Frequency_analysis
- *
- * @author kasper
- * Optimized by Cosby and Stabz
- * 
- */
-public class MainOptimized {
+public class Optimized {
+
+    /**
+     * This is the fully optimized version of the original 
+     * letter frewuency project.
+     */
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        // path to text-file to count letter frequencies
-        String cosbyPath = "letterfrequencies/src/main/resources/FoundationSeries.txt";
-        //String cosbyPath = "letterfrequencies/src/main/resources/world192.txt";
-        String dimaPath = "...//";
-
-        String fileName = cosbyPath;
-        //String fileName = dimaPath;
+        String path = "";
 
         // Creating input stream for the file
-        Reader fileReader = new FileReader(fileName);
+        Reader fileReader = new FileReader(path);
 
         // OPTIMIZED: Using a buffered reader instead of the raw FileReader
         Reader reader = new BufferedReader(fileReader);
@@ -42,25 +33,11 @@ public class MainOptimized {
                  0,0,0,0,0,
                  0,0,0,0,0,0};
 
-        // Starting timer to time the two methods
-        Timer timer = new Timer();
-        timer.start();
-
         // Count word frequencies using the 
         // buffered reader and the freq array
         tallyChars(reader, freq);
 
-        // Get time for first method and print it to console
-        long step = timer.milliNow(); 
-        // OBS: print should be removed when taking time on entire program
-        System.out.println("Tally chars execution time: " + step + "ms");
-        
-        // Print the letters and frequencies to the console
         print_tally(freq);
-
-        // Get time for second method and print it to console
-        long stop = timer.milliNow();
-        System.out.println("Tally chars execution time: " + stop + "ms");
     }
 
     /**
