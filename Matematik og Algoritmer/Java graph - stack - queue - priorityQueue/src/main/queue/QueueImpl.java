@@ -14,6 +14,16 @@ public class QueueImpl<T> implements Queue<T> {
         queue[newItemPos++] = node;
     }
 
+    /**
+     * [5,3,7,89,null,null,null,null]
+     *         ↑
+     *      newItemPos-1
+     * 
+     * Ater dequeue
+     * [3,7,89,89,null,null,null,null]
+     *      ↑
+     *  newItemPos-1
+     */
     @Override
     public T dequeue() {
         T returnItem = queue[0];

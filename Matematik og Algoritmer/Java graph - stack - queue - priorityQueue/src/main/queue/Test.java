@@ -1,11 +1,12 @@
 package main.queue;
 
+import java.util.Comparator;
+
 public class Test {
     
     public static void main(String[] args) {
 
         //testQueue();
-
         testPriorityQueue();
 
     }

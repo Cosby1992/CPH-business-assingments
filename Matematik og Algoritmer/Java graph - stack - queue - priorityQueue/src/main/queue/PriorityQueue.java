@@ -5,6 +5,7 @@ public class PriorityQueue<T extends Comparable<T>> implements Queue<T> {
     private T[] pQueue;
     private int pointer = 0;
 
+    // Constructor
     public PriorityQueue(int size) {
         pQueue = (T[]) new Comparable[size];
     }
@@ -21,7 +22,7 @@ public class PriorityQueue<T extends Comparable<T>> implements Queue<T> {
         int index = 0;
 
         for (int i = 1; i < pointer; i++) {
-            if(pQueue[i] != null && firstPriority.compareTo(pQueue[i]) >= 0){
+            if(pQueue[i] != null && firstPriority.compareTo(pQueue[i]) > 0){
                 firstPriority = pQueue[i];
                 index = i;
             }
