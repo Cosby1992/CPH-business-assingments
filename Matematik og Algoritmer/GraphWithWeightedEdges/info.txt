@@ -1,0 +1,5 @@
+Here is a graph implementation for the purpose of creating an MST. 
+
+MST = Minimum Spanning Tree
+
+Both Prim's and Kruskal's MST algoritms are to be implemented 
