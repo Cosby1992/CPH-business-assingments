@@ -15,7 +15,7 @@ public class Optimized {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        String path = "";
+        String path = "src/main/resources/FoundationSeries.txt";
 
         // Creating input stream for the file
         Reader fileReader = new FileReader(path);

@@ -26,9 +26,8 @@ public class Original {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
-        String filePath = "letterfrequencies/src/main/resources/FoundationSeries.txt";
+        String filePath = "src/main/resources/FoundationSeries.txt";
 
-        //String fileName = dimaPath;
         Reader reader = new FileReader(filePath);
         Map<Integer, Long> freq = new HashMap<>();
 

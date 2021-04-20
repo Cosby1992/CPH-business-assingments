@@ -8,8 +8,6 @@ public class Timer {
         start = System.nanoTime();
     }
 
-
-
     public long nanoNow(){
 
         return System.nanoTime() - start;
