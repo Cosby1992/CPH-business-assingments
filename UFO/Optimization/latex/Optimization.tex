@@ -1,0 +1,100 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\author{Anders Jacobsen, Dima Karaush}
+\title{Optimization of Letter Frequencies - Take Two}
+
+\begin{document}
+% \lstset{language=Java}
+
+\maketitle
+
+\tableofcontents
+
+\section{Test Enviroment}
+System information
+Java information
+IDE info? 
+
+\section{Introduction}
+what are we working with
+what approach do we take on the task
+what results are we expecting? 
+
+\section{Tools for Benchmarking}
+Timer klassen
+Benchmark timeren
+Lavet metoder statiske og kalder dem ved benchmarking
+
+\section{Benchmark for original}
+What is going on in the program
+As it is visible on Listing \ref{lst:originalmainmethod}, the original letter frequencies program uses a FileReader 
+and a HashMap\textless Integer, Long\textgreater \space to read the file and safe the letter frequencies. It 
+manipulates the Hashmap through the static tallyChars method. Then the program uses 
+the other static method, print\_tally, to show the letters alligned with their 
+frequency in the file. 
+
+
+\begin{lstlisting}[caption={The main method of the original Letter Frequncies program without optimizations},label={lst:originalmainmethod},language=Java]
+public static void main(String[] args) throws FileNotFoundException, IOException {
+
+    String filePath = "src/main/resources/FoundationSeries.txt";
+
+    Reader reader = new FileReader(filePath);
+    Map<Integer, Long> freq = new HashMap<>();
+
+    tallyChars(reader, freq);
+
+    print_tally(freq);
+}
+\end{lstlisting}
+
+code snippets of benchmark points
+How did we make the benchmark method
+What can be optimized
+
+\section{Optimization}
+What changes do we make to the program
+Show snippets of changes
+
+\section{Benchmark for Optimized}
+show the results of the benchmark
+
+\section{Benchmark Comparison}
+Compare the original vs the optimized times
+show tons of graphs and charts
+
+\section{Conclusion}
+Sum it up 
+talk about most remarkable changes.
+
+
+\end{document}
