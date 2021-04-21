@@ -8,7 +8,7 @@
 **Note:** same crime can happen in the same location
 
 ## All nodes
-![Nodes](https://github.com/Cosby1992/CPH-business-assingments/tree/master/Databases/StreetCrime/fig/figure.PNG "Nodes")
+![Nodes](https://github.com/Cosby1992/CPH-business-assingments/blob/master/Databases/StreetCrime/fig/figure.png "Nodes")
 
 ## Common place for crimes
 In order to find which location has the most crimes we used the cypher in ```LocationVMostCrimes.cypher```.
