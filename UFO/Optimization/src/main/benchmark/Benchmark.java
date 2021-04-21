@@ -174,21 +174,13 @@ public class Benchmark {
 
         String path = "src/main/resources/FoundationSeries.txt";
 
-        // Creating input stream for the file
-        Reader fileReader = new FileReader(path);
-
         // OPTIMIZED: Using a buffered reader instead of the raw FileReader
-        Reader reader = new BufferedReader(fileReader);
+        Reader reader = new BufferedReader(new FileReader(path));
         
         // OPTIMIZED: Using a normal array with length 26 representing 
         // the english alphabet fx. index 0 = frequency of A, index 1 = frequency of B, etc...
         // instead of a HashMap<Integer, Long>
-        int[] freq =
-                {0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,0,
-                 0,0,0,0,0,0};
+        int[] freq = new int[26];
 
         initializeTime = timer.milli();
         timer.start();
