@@ -1,5 +1,6 @@
 package src.main.benchmark;
 
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -7,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import src.main.benchmark.benchmark_classes.BenchmarkTimer;
+import src.main.benchmark.benchmark_classes.OptimizedForBenchmark;
 import src.main.benchmark.benchmark_classes.OriginalForBenchmark;
 
 public class Benchmark {
@@ -20,7 +22,7 @@ public class Benchmark {
         // printTallyTimes(timer);
         // timer = new BenchmarkTimer(3);
 
-        multipleRunsOriginal(500, 30, timer);
+        multipleRunsOptimized(500, 30, timer);
 
         timer.writeRealTimesToCSV("time_data/multiple_run_real_times_new.csv");
 
@@ -28,7 +30,7 @@ public class Benchmark {
 
     }
 
-    private static void printTallyTimes(BenchmarkTimer timer){
+    private static void printTallyTimes(BenchmarkTimer timer) {
         System.out.println("Warmup");
         System.out.println("Init  time: " + timer.getAverageWarmupTime(0) + "ms");
         System.out.println("Tally time: " + timer.getAverageWarmupTime(1) + "ms");
@@ -64,9 +66,9 @@ public class Benchmark {
         }
 
     }
-
+    
     public static void SingleRunOriginal(int warmUpIterations, BenchmarkTimer timer) throws IOException {
-
+        
         double[] temp = new double[3];
 
         // Warmup iterations
@@ -80,14 +82,14 @@ public class Benchmark {
 
         // Real timing
         temp = original();
-        
+
         for (int i = 0; i < 3; i++) {
             timer.addRealTime(i, temp[i]);
         }
 
     }
 
-    public static double[] original() throws IOException{
+    public static double[] original() throws IOException {
         double initializeTime, tallyCharsTime, printTallyTime = 0.0;
 
         // Get the starting time
@@ -108,6 +110,95 @@ public class Benchmark {
         timer.start();
 
         OriginalForBenchmark.print_tally(letterFrequencyMap);
+
+        printTallyTime = timer.milli();
+
+        double[] times = { initializeTime, tallyCharsTime, printTallyTime };
+
+        return times;
+    }
+
+    public static void multipleRunsOptimized(int iterations, int warmUpIterations, BenchmarkTimer timer)
+            throws IOException {
+
+        double[] temp = new double[3];
+
+        // Warm-up
+        for (int i = 0; i < warmUpIterations; i++) {
+            temp = optimized();
+
+            for (int j = 0; j < 3; j++) {
+                timer.addWarmupTime(j, temp[j]);
+            }
+        }
+
+        // Real test
+        for (int i = 0; i < iterations; i++) {
+            temp = optimized();
+
+            for (int j = 0; j < 3; j++) {
+                timer.addRealTime(j, temp[j]);
+            }
+        }
+
+    }
+
+    public static void SingleRunOptimized(int warmUpIterations, BenchmarkTimer timer) throws IOException {
+
+        double[] temp = new double[3];
+
+        // Warmup iterations
+        for (int i = 0; i < warmUpIterations; i++) {
+            temp = optimized();
+
+            for (int j = 0; j < 3; j++) {
+                timer.addWarmupTime(j, temp[j]);
+            }
+        }
+
+        // Real timing
+        temp = optimized();
+
+        for (int i = 0; i < 3; i++) {
+            timer.addRealTime(i, temp[i]);
+        }
+
+    }
+
+    public static double[] optimized() throws IOException {
+        double initializeTime, tallyCharsTime, printTallyTime = 0.0;
+
+        // Get the starting time
+        Timer timer = new Timer();
+        timer.start();
+
+        String path = "src/main/resources/FoundationSeries.txt";
+
+        // Creating input stream for the file
+        Reader fileReader = new FileReader(path);
+
+        // OPTIMIZED: Using a buffered reader instead of the raw FileReader
+        Reader reader = new BufferedReader(fileReader);
+        
+        // OPTIMIZED: Using a normal array with length 26 representing 
+        // the english alphabet fx. index 0 = frequency of A, index 1 = frequency of B, etc...
+        // instead of a HashMap<Integer, Long>
+        int[] freq =
+                {0,0,0,0,0,
+                 0,0,0,0,0,
+                 0,0,0,0,0,
+                 0,0,0,0,0,
+                 0,0,0,0,0,0};
+
+        initializeTime = timer.milli();
+        timer.start();
+
+        OptimizedForBenchmark.tallyChars(reader, freq);
+
+        tallyCharsTime = timer.milli();
+        timer.start();
+
+        OptimizedForBenchmark.print_tally(freq);
 
         printTallyTime = timer.milli();
 

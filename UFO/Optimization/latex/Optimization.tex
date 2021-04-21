@@ -373,6 +373,22 @@ From our data and data visualization we now know that we need to focus our optim
 In Section \ref{optimization} we show what steps we took to optimize the program.
 
 \section{Optimization} \label{optimization}
+The first thing we focus on is the actual reading of the file. In the original code they use a FileReader to read the file.
+Reading a file without a buffer is undeniably slower than with the buffer. So we start off by implementing this change. 
+
+\begin{lstlisting}[caption={Change to BufferedReader}, label={lst:optimizationone}]
+    public static void main(String[] args) throws IOException {
+    
+        BenchmarkTimer timer = new BenchmarkTimer(3);
+    
+        multipleRunsOriginal(500, 30, timer);
+    
+        timer.writeRealTimesToCSV("time_data/multiple_run_real_times_new.csv");
+    
+        printTallyTimes(timer);
+    }
+    \end{lstlisting} 
+
 What changes do we make to the program
 Show snippets of changes
 
