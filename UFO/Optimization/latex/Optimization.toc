@@ -1,8 +1,19 @@
-\contentsline {section}{\numberline {1}Test Enviroment}{1}{}%
-\contentsline {section}{\numberline {2}Introduction}{1}{}%
-\contentsline {section}{\numberline {3}Tools for Benchmarking}{1}{}%
-\contentsline {section}{\numberline {4}Benchmark for original}{2}{}%
-\contentsline {section}{\numberline {5}Optimization}{2}{}%
-\contentsline {section}{\numberline {6}Benchmark for Optimized}{2}{}%
-\contentsline {section}{\numberline {7}Benchmark Comparison}{2}{}%
-\contentsline {section}{\numberline {8}Conclusion}{2}{}%
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {section}{\numberline {2}Test Enviroment}{3}{}%
+\contentsline {subsection}{\numberline {2.1}PC and operating system}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Software Enviroment}{4}{}%
+\contentsline {section}{\numberline {3}Tools for Benchmarking}{4}{}%
+\contentsline {section}{\numberline {4}Benchmark for original}{4}{}%
+\contentsline {subsection}{\numberline {4.1}The timer}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Warmup}{5}{}%
+\contentsline {subsection}{\numberline {4.3}Saving the results}{6}{}%
+\contentsline {subsection}{\numberline {4.4}Benchmark of the original code}{6}{}%
+\contentsline {subsection}{\numberline {4.5}Results}{7}{}%
+\contentsline {paragraph}{Mean and standard deviation}{7}{}%
+\contentsline {paragraph}{Min, max and quatiles}{7}{}%
+\contentsline {paragraph}{Percent of execution time}{8}{}%
+\contentsline {paragraph}{Optimization}{8}{}%
+\contentsline {section}{\numberline {5}Optimization}{9}{}%
+\contentsline {section}{\numberline {6}Benchmark for Optimized}{9}{}%
+\contentsline {section}{\numberline {7}Benchmark Comparison}{9}{}%
+\contentsline {section}{\numberline {8}Conclusion}{9}{}%

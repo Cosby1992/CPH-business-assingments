@@ -298,81 +298,51 @@ of where we need to focus our optimization. The output to the console only takes
 that optimization in this part of the program will have less infuence of the total runtime. However, the lowest amount of time 
 is used in initialization, that only takes up 0,25\% of the total execution time. 
 
-\subsection*{Boxplot of all times}
-We have collected all the times in a boxplot to see how they lie compared to oneanother.  
-
-\begin{tikzpicture}
-    \begin{axis}
-        [
-        ytick={1,2,3},
-        yticklabels={print\_tally, tallyChars, Initialization},
-        ]
-        \addplot+[
-        boxplot prepared={
-            median=2.694450,
-            upper quartile=2.844200,
-            lower quartile=2.582875,
-            upper whisker=3.5857,
-            lower whisker=2.047200
-        },
-        mark=x,
-        ] coordinates {(1, 9.720600)};
-        \addplot+[
-        boxplot prepared={
-            median=39.452850,
-            upper quartile=40.195350,
-            lower quartile=39.220900,
-            upper whisker=43.6940,
-            lower whisker=39.005500
-        },
-        mark=x,
-        ] coordinates {(1,46.7305)(1,44.0142)(1,46.9461)(1,44.0941)(1,43.9271)(1,44.4166)(1,47.5907)(1,44.1446)(1,44.8155)(1,43.8375)(1,51.593)};
-        \addplot+[
-            boxplot prepared={
-                median=0.084550,
-                upper quartile=0.093400,
-                lower quartile=0.070675,
-                upper whisker=0.1897,
-                lower whisker=0.056300
-            },
-            mark=x,
-            ] coordinates {(1, 10.4433)};
-    \end{axis}
-\end{tikzpicture}
-
-\subsection*{Tally Chars boxplot}
-Here we have zoomed in on a boxplot of the most time consuming part of the program, the tallyChars method. 
-
+We can now try to plot the execution times in a boxplot. 
 \begin{tikzpicture}
     \begin{axis}
       [
-      ytick={1},
-      y=3cm,
-      yticklabels={tallyChars}
+      ytick={1,2,3},
+      yticklabels={Initialization, tallyChars, print\_tally},
       ]
       \addplot+[
-        boxplot prepared={
-          median=39.452850,
-          upper quartile=40.195350,
-          lower quartile=39.220900,
-          upper whisker=43.6940,
-          lower whisker=39.005500
-        }, 
-        color=red,
-        mark=x,
-        every mark/.append style={
-            fill=red,
-        },
-        ] coordinates {(1,46.7305)(1,44.0142)(1,46.9461)(1,44.0941)(1,43.9271)(1,44.4166)(1,47.5907)(1,44.1446)(1,44.8155)(1,43.8375)(1,51.593)};
+      boxplot prepared={
+        median=47,
+        upper quartile=47,
+        lower quartile=46,
+        upper whisker=99,
+        lower whisker=40
+      },
+      ] coordinates {};
+      \addplot+[
+      boxplot prepared={
+        median=23,
+        upper quartile=23,
+        lower quartile=23,
+        upper whisker=26,
+        lower whisker=23
+      },
+      ] coordinates {};
+      \addplot+[
+      boxplot prepared={
+          median=23,
+          upper quartile=23,
+          lower quartile=23,
+          upper whisker=26,
+          lower whisker=23
+      },
+      ] coordinates {};
     \end{axis}
   \end{tikzpicture}
 
 \paragraph{Optimization}
-After exploring the data collected from the original benchmark we are now ready to optimize the code. 
-From our data and data visualization we now know that we need to focus our optimization on the tallyChars method.
-In Section \ref{optimization} we show what steps we took to optimize the program.
 
-\section{Optimization} \label{optimization}
+
+code snippets of benchmark points
+How did we make the benchmark method
+What can be optimized
+
+\section{Optimization}
 What changes do we make to the program
 Show snippets of changes
 

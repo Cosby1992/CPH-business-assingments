@@ -22,7 +22,7 @@ public class Benchmark {
 
         multipleRunsOriginal(500, 30, timer);
 
-        timer.writeRealTimesToCSV("time_data/multiple_run_real_times.csv");
+        timer.writeRealTimesToCSV("time_data/multiple_run_real_times_new.csv");
 
         printTallyTimes(timer);
 
@@ -43,9 +43,11 @@ public class Benchmark {
 
     public static void multipleRunsOriginal(int iterations, int warmUpIterations, BenchmarkTimer timer) throws IOException {
 
+        double[] temp = new double[3];
+
         // Warm-up
         for (int i = 0; i < warmUpIterations; i++) {
-            double[] temp = original();
+            temp = original();
 
             for (int j = 0; j < 3; j++) {
                 timer.addWarmupTime(j, temp[j]);
@@ -54,7 +56,7 @@ public class Benchmark {
 
         // Real test
         for (int i = 0; i < iterations; i++) {
-            double[] temp = original();
+            temp = original();
 
             for (int j = 0; j < 3; j++) {
                 timer.addRealTime(j, temp[j]);
@@ -65,15 +67,19 @@ public class Benchmark {
 
     public static void SingleRunOriginal(int warmUpIterations, BenchmarkTimer timer) throws IOException {
 
+        double[] temp = new double[3];
+
+        // Warmup iterations
         for (int i = 0; i < warmUpIterations; i++) {
-            double[] temp = original();
+            temp = original();
 
             for (int j = 0; j < 3; j++) {
                 timer.addWarmupTime(j, temp[j]);
             }
         }
 
-        double[] temp = original();
+        // Real timing
+        temp = original();
         
         for (int i = 0; i < 3; i++) {
             timer.addRealTime(i, temp[i]);
