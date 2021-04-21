@@ -14,24 +14,13 @@ public class OptimizedForBenchmark {
      */
     public static void tallyChars(Reader reader, int[] integerArray) throws IOException {
         
-        // integer to hold value from reader, 
-        // value is between 0-65535
         int b;
-        
         
         // Loop until end of file
         while ((b = reader.read()) != -1) {
 
-            // If the value is not a letter 
-            // between a and z -> skip iteration
-            // 97 = A
-            // 122 = Z
-            if(b < 97 || b > 122) continue;
-
-            // A = 97
-            // Letter - 97 -> Index in array
             // Increment index to represent frequency of that letter 
-            integerArray[b-97] += 1;
+            integerArray[b] += 1;
         }
 
     }
@@ -42,16 +31,42 @@ public class OptimizedForBenchmark {
      * @param freq array of frequencies
      */
     public static void print_tally(int[] freq) {
+        int[][] map = new int[26][2];
 
-        // Iterate through the frequencies
-        for (int i = 0; i<freq.length; i++){
-
-            //build a char from the index by adding 97 (ASCII 97 = 'A') 
-            char letter = (char) (i+97);
-
-            // Print the letter and the frequency fx. "a : 76011"
-            System.out.println(letter+" : "+ freq[i]);
+        for (int i = 0; i < 26; i++){
+            int index = i+65; // A = 65 (ASCII) 
+            insertSorted(index, freq[i+97]+freq[index], map, i);
         }
+
+        printMap(map);
+    }
+
+    private static void printMap(int[][] map) {
+        
+        for (int i = 0; i < map.length; i++) {
+            System.out.println((char) (map[i][1]) + ":" + map[i][0]);
+        }
+    }
+
+    private static void insertSorted(int index, int value, int[][] map, int iteration){
+
+        for (int i = 0; i < map.length-(map.length - iteration-1); i++) {
+            if(map[i][0] <= value) {
+
+                for (int j = map.length-1; j > i; j--) {
+                    map[j][0] = map[j-1][0];
+                    map[j][1] = map[j-1][1];
+                }
+
+                map[i][0] = value;
+                map[i][1] = index;
+
+                return;
+            }
+        }
+
+        map[0][0] = value;
+        map[0][1] = index;
 
     }
 }

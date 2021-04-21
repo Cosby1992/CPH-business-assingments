@@ -377,17 +377,51 @@ The first thing we focus on is the actual reading of the file. In the original c
 Reading a file without a buffer is undeniably slower than with the buffer. So we start off by implementing this change. 
 
 \begin{lstlisting}[caption={Change to BufferedReader}, label={lst:optimizationone}]
-    public static void main(String[] args) throws IOException {
-    
-        BenchmarkTimer timer = new BenchmarkTimer(3);
-    
-        multipleRunsOriginal(500, 30, timer);
-    
-        timer.writeRealTimesToCSV("time_data/multiple_run_real_times_new.csv");
-    
-        printTallyTimes(timer);
+    String path = "src/main/resources/FoundationSeries.txt";
+
+    Reader reader = new BufferedReader(new FileReader(path));
+\end{lstlisting} 
+
+Now we need to look at the actual reading of the file. And that happens in the tallyChars method. Before it was using 
+a HashMap\textless Integer, Long\textgreater  , but we think that a normal int[] will sufice. It should be much faster 
+to set a place in a normal array than to do a try catch on inserting in a HashMap.
+Our optimized tallyChars method can be seen on Listing \ref{lst:optimizationone}
+
+\begin{lstlisting}[caption={Change to BufferedReader}, label={lst:optimizationone}]
+    public static void tallyChars(Reader reader, int[] integerArray) throws IOException {
+        
+        int b;
+
+        // Loop until end of file
+        while ((b = reader.read()) != -1) {
+            // Increment index to represent frequency of that letter 
+            integerArray[b] += 1;
+        }
     }
-    \end{lstlisting} 
+\end{lstlisting}
+
+\paragraph{So whats going on?} We simply read the characters from the file one by one as an integer between 0-65534. 
+Then we increment the position in the array on this index. Then later we can retrieve the letters we want, as their 
+placement will follow the ascii table (0-255). 
+
+Now we will try and optimize the print\_tally method, we are unsure how much time we can save here since
+We have to sort a part of the array, and keep track it's index to know witch letter it represents. 
+The solution we found is descriped in Listing \ref{} to \ref{}. 
+
+\begin{lstlisting}[caption={Change to BufferedReader}, label={lst:optimizationone}]
+    public static void print_tally(int[] freq) {
+        int[][] map = new int[26][2];
+
+        for (int i = 0; i < 26; i++){
+            int index = i+65; // A = 65 (ASCII) 
+            insertSorted(index, freq[i+97]+freq[index], map, i);
+        }
+
+        printMap(map);
+    }
+\end{lstlisting}
+
+
 
 What changes do we make to the program
 Show snippets of changes

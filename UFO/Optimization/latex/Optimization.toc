@@ -14,6 +14,7 @@
 \contentsline {paragraph}{Percent of execution time}{8}{}%
 \contentsline {paragraph}{Optimization}{8}{}%
 \contentsline {section}{\numberline {5}Optimization}{9}{}%
-\contentsline {section}{\numberline {6}Benchmark for Optimized}{9}{}%
-\contentsline {section}{\numberline {7}Benchmark Comparison}{9}{}%
-\contentsline {section}{\numberline {8}Conclusion}{9}{}%
+\contentsline {paragraph}{So whats going on?}{9}{}%
+\contentsline {section}{\numberline {6}Benchmark for Optimized}{10}{}%
+\contentsline {section}{\numberline {7}Benchmark Comparison}{10}{}%
+\contentsline {section}{\numberline {8}Conclusion}{10}{}%
