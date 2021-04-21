@@ -24,7 +24,7 @@ public class Benchmark {
 
         multipleRunsOptimized(500, 30, timer);
 
-        timer.writeRealTimesToCSV("time_data/multiple_run_real_times_new.csv");
+        //timer.writeRealTimesToCSV("time_data/multiple_run_real_times_new.csv");
 
         printTallyTimes(timer);
 
