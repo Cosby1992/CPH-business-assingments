@@ -22,7 +22,7 @@ public class Benchmark {
         // printTallyTimes(timer);
         // timer = new BenchmarkTimer(3);
 
-        multipleRunsOptimized(500, 30, timer);
+        multipleRunsOptimized(1, 1, timer);
 
         timer.writeRealTimesToCSV("time_data/multiple_run_real_times_new.csv");
 

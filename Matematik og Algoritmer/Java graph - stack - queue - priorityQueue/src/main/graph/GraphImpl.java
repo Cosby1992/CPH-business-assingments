@@ -2,7 +2,7 @@ package main.graph;
 
 import java.util.ArrayList;
 
-public class GraphImpl implements Graph {
+public class GraphImpl implements Graph, main.weightedGraph.interfaces.Graph {
 
     private ArrayList<Integer>[] graph;
     private int edgeCount = 0;
