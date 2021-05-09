@@ -1,0 +1,12 @@
+
+Emne: PriorityQueue i Java
+    Udforsk den inbyggede PriorityQueue i Java
+    Hvorfor er den ikke god? (kan ikke updatere entries, kun linære ændringer (ingen indbygget update() metode))
+    Big O notation
+    Måske en bedre måde at lave den på, eller i hvert fald ideer til forbedringer
+
+Emne: subnetting i IPV6 ( måske vs IPv4)
+    Hvad er en IP-adresse? 
+    Hvordan fungere subnetting? 
+    Hvordan fugere subnetting i IPv6?
+

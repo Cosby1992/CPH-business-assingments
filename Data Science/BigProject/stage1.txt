@@ -1,0 +1,42 @@
+1. Collect ideas and define a business or social domain, where data science can bring a value
+We've come up with an idea about exploring data from cryptocurrencies. 
+We want to find, use and predict their values and maybe do a comparisson of multiple coins.
+
+2. Ideas from searching the web
+comparisson of the coins by: 
+    a. Increase in percent over a given time (recent time)
+    b. How many coins can you buy for 1000$
+    c. How much money could we have gained if we bought the coins a while ago
+    SOURCE: https://towardsdatascience.com/cryptocurrency-analysis-with-python-buy-and-hold-c3b0bc164ffa
+
+3. Formulate context, purpose, questions, and hypotheses for data science experiment
+    context: 
+        We want to explore a selection of cryptocurrencies and their respective value change over time. 
+    purpose:
+        Show how much they can change over short amounts of time
+        Show their change in value over time compared to a real currency
+        Try to create a formula to predict their values given a date in the future 
+        (we expect a large error margin, caused by their extreme swings, but maybe we can predict short amounts of time in the future)
+    questions:
+        What is the maximun change happend over a month period for the cryptocurrencies (Doge Coin, Etherium, Bitcoin)?
+        How has the cryptocurrency values changed compared to USD (Real United State Dollars)?
+        How will the cryptocurrencies change their values in the future? 
+        What is the margin of error in our predictions? 
+    hypotheses:    
+        H0-0:
+            Cryptocurrencies are unpredictable (due to rapid changes and seemingly unpredictable behavior (in graphs/plots))
+        H1-0:
+            Cryptocurrencies are predictable
+
+        H0-1:
+            Cryptocurrencies follow the values of Real currencies
+        H1-1:
+            Cryptocurrencies do not follow the values of Real currencies
+
+4. Technology
+    a. Select and install software tools and development enviroments
+        We've selected to use LaTeX, Python(3) (with multiple libraries) and Python notebook, Visual Studio Code. 
+        We've installed all these software products and integrated them with Visual Studio Code.  
+    b. Create a github repository, witch will host all project components 
+       during all stages of the development and implementaiton process
+       

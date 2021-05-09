@@ -1,0 +1,3 @@
+Task 4U
+
+Revise the code from these demo examples and then create a TensorFlow that solves the graph from the image above.
