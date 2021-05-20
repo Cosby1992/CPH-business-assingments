@@ -5,7 +5,6 @@ import dk.cphbusiness.mrv.twitterclone.dto.UserCreation;
 import dk.cphbusiness.mrv.twitterclone.dto.UserOverview;
 import dk.cphbusiness.mrv.twitterclone.dto.UserUpdate;
 import dk.cphbusiness.mrv.twitterclone.util.Time;
-import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
 import redis.clients.jedis.Jedis;
 
 import java.util.List;
@@ -55,8 +54,8 @@ public class UserManagementImpl implements UserManagement {
         overview.username = username;
         overview.firstname = jedis.get(rootKey + "firstname");
         overview.lastname = jedis.get(rootKey + "lastname");
-        overview.numFollowers = Integer.valueOf(jedis.get(rootKey + "numfollowers"));
-        overview.numFollowing = Integer.valueOf(jedis.get(rootKey + "numfollowing"));
+        overview.numFollowers = Integer.valueOf(jedis.get(rootKey + "numFollowers"));
+        overview.numFollowing = Integer.valueOf(jedis.get(rootKey + "numFollowing"));
 
         return overview;
 
