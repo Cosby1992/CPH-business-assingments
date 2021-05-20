@@ -1,4 +1,13 @@
 # Twitter-clone
+
+## To run
+1. Download this repo. If you only want this part of the repo and not the entire repo, use this link https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Cosby1992/CPH-business-assingments/tree/master/Databases/twitter-clone.
+
+2. Navigate to root of the project
+
+3. Run the tests
+
+
 ## Task 1
 Server is created by Java code (in docker container). Remember to pull redis, alpine:3.5 and testcontainers/ryuk:0.3.0 images from docker before running the code.
 Client is emulated trough tests.
