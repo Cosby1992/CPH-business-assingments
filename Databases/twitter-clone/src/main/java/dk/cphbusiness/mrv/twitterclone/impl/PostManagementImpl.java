@@ -25,10 +25,10 @@ public class PostManagementImpl implements PostManagement {
         boolean exists = jedis.exists("user:"+username );
         
         if(exists){
-            jedis.set("post:"+username+":"+time, message);
+            jedis.set("post:"+username+":" + time.getCurrentTimeMillis(), message);
             //jedis.rpush("post:"+username+":posttime",""+time);
 
-            jedis.zadd("post:"+username+":posttime",0,String.valueOf(time));
+            jedis.zadd("post:"+username+":posttime",0,String.valueOf(time.getCurrentTimeMillis()));
             exists = true;
         }
 
@@ -56,10 +56,10 @@ public class PostManagementImpl implements PostManagement {
         boolean exists = jedis.exists("user:" + username);
         if(!exists) return null;
 
-        long start = 0;
-                
+        Set<String> timestamps = jedis.zrangeByLex("post:"+username+":posttime", "["+String.valueOf(timeFrom), "["+String.valueOf(timeTo));
 
-        Set<String> timestamps = jedis.zrangeByLex("post:"+username+":posttime", String.valueOf(timeFrom-1), String.valueOf(timeTo+1));
+        System.out.println("Timestamps: " + timestamps);
+
         List<Post> postList = new ArrayList<Post>();
 
         for (String ts : timestamps) {
