@@ -44,7 +44,22 @@ public class UserManagementImpl implements UserManagement {
 
     @Override
     public UserOverview getUserOverview(String username) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        
+        boolean exists = jedis.exists("user:" + username);
+
+        if(!exists) return null;
+
+        String rootKey = "user:" + username + ":";
+        UserOverview overview = new UserOverview();
+
+        overview.username = username;
+        overview.firstname = jedis.get(rootKey + "firstname");
+        overview.lastname = jedis.get(rootKey + "lastname");
+        overview.numFollowers = Integer.valueOf(jedis.get(rootKey + "numfollowers"));
+        overview.numFollowing = Integer.valueOf(jedis.get(rootKey + "numfollowing"));
+
+        return overview;
+
     }
 
     @Override
