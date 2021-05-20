@@ -23,8 +23,10 @@ public class UserManagementImpl implements UserManagement {
     @Override
     public boolean createUser(UserCreation userCreation) {
 
+        // Check is user key exists in db
         boolean exists = jedis.exists("user:"+userCreation.username);
 
+        // If it doesn't exist, create user in db
         if(!exists){
             jedis.set("user:"+userCreation.username,userCreation.username);
             jedis.set("user:"+userCreation.username+":firstname",userCreation.firstname);
@@ -34,29 +36,30 @@ public class UserManagementImpl implements UserManagement {
             jedis.set("user:"+userCreation.username+":numFollowers","0");
             jedis.set("user:"+userCreation.username+":numFollowing","0");
 
-            
         }
 
+        // false if user exists, true if user was created
         return !exists;
     
     }
 
     @Override
     public UserOverview getUserOverview(String username) {
-        
-        boolean exists = jedis.exists("user:" + username);
 
-        if(!exists) return null;
+        // Return null if user does not exist
+        if(!jedis.exists("user:" + username)) return null;
 
         String rootKey = "user:" + username + ":";
         UserOverview overview = new UserOverview();
 
+        // Build UserOverview with data from db
         overview.username = username;
         overview.firstname = jedis.get(rootKey + "firstname");
         overview.lastname = jedis.get(rootKey + "lastname");
         overview.numFollowers = Integer.valueOf(jedis.get(rootKey + "numFollowers"));
         overview.numFollowing = Integer.valueOf(jedis.get(rootKey + "numFollowing"));
 
+        // Return the userdata
         return overview;
 
     }
@@ -64,8 +67,10 @@ public class UserManagementImpl implements UserManagement {
     @Override
     public boolean updateUser(UserUpdate userUpdate) {
 
+        // Check is user key exists in db
         boolean exists = jedis.exists("user:"+userUpdate.username);
 
+        // If user exists, update values
         if(exists){
             if(userUpdate.firstname != null) {
             jedis.set("user:"+userUpdate.username+":firstname",userUpdate.firstname);
@@ -79,6 +84,7 @@ public class UserManagementImpl implements UserManagement {
             
         }
 
+        // Return false if user does not exist, true if user was updated
         return exists;
     }
 
@@ -88,16 +94,19 @@ public class UserManagementImpl implements UserManagement {
         String follower = "user:" + username;
         String followed = "user:" + usernameToFollow;
 
+        // Check if the usernames exists in the db (return false if users does not exist)
         if(!jedis.exists(follower) || !jedis.exists(followed)) return false;
         
         String rootKeyFollowing = follower + ":following";
         String rootKeyFollowers = followed + ":followers";
 
+        // Push to following and followers lists respectively for the two users
         jedis.lpush(rootKeyFollowers, username);
         jedis.incr(follower + ":numFollowing");
         jedis.lpush(rootKeyFollowing, usernameToFollow);
         jedis.incr(followed + ":numFollowers");
         
+        // Return true for success
         return true;
     }
 
@@ -107,6 +116,7 @@ public class UserManagementImpl implements UserManagement {
         String follower = "user:" + username;
         String followed = "user:" + usernameToUnfollow;
 
+        // Check if the usernames exists in the db (return false if users does not exist)
         if(!jedis.exists(follower) || !jedis.exists(followed)) return false;
 
         //remove from following username
@@ -125,10 +135,13 @@ public class UserManagementImpl implements UserManagement {
     public Set<String> getFollowedUsers(String username) {
         
         String userKey = "user:" + username;
+
+        // Return null if user does not exist
         if(!jedis.exists(userKey)) return null;
 
         String rootKeyFollowers = userKey + ":following";
         
+        // Get list of followed users from db
         List<String> followers = jedis.lrange(rootKeyFollowers, 0, -1);
 
         Set<String> hSet = new HashSet<String>();
@@ -136,9 +149,8 @@ public class UserManagementImpl implements UserManagement {
         for (String x : followers)
             hSet.add(x);
         
+        // Return as set<String>
         return hSet;
-
-
 
     }
 
@@ -146,10 +158,13 @@ public class UserManagementImpl implements UserManagement {
     public Set<String> getUsersFollowing(String username) {
 
         String userKey = "user:" + username;
+
+        // Return null if user does not exist
         if(!jedis.exists(userKey)) return null;
 
         String rootKeyFollowers = userKey + ":followers";
         
+        // Get list of follewed users from db
         List<String> followers = jedis.lrange(rootKeyFollowers, 0, -1);
 
         Set<String> hSet = new HashSet<String>();
@@ -157,6 +172,7 @@ public class UserManagementImpl implements UserManagement {
         for (String x : followers)
             hSet.add(x);
         
+        // Return as Set<String>
         return hSet;
     }
 
