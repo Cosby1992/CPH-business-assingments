@@ -1,0 +1,37 @@
+
+Athentication: 
+	
+Autherization:
+	JWT - 
+
+User:username: 
+	Followers: 
+		usernames
+	Following:
+		usernames
+	Posts:
+		timestamp: YYYYMMDDHHMMSS
+		image: "binary"
+		message: "some string"
+		likeCount: number
+	Password: "some string"
+	Name: "some string"
+	online: "true"/"false"
+
+
+set user:cosby:password secretPass123
+
+// Add followers
+zadd user:cosby:followers 0 dima 
+zadd user:cosby:followers 0 dora
+zadd user:cosby:followers 0 martin
+
+// follow 
+zadd user:cosby:following 0 tobais 
+zadd user:cosby:following 0 anders
+zadd user:cosby:following 0 jackblack
+
+// add post
+zadd user:cosby:posts 20210506113852 "My new update message"
+zadd user:cosby:posts 20210506113945 "My new update message2"
+zadd user:cosby:posts 20210506114050 "My new update message3"
