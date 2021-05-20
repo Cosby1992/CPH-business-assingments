@@ -5,6 +5,7 @@ import dk.cphbusiness.mrv.twitterclone.dto.UserCreation;
 import dk.cphbusiness.mrv.twitterclone.dto.UserOverview;
 import dk.cphbusiness.mrv.twitterclone.dto.UserUpdate;
 import dk.cphbusiness.mrv.twitterclone.util.Time;
+import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
 import redis.clients.jedis.Jedis;
 
 import java.util.List;
@@ -21,7 +22,24 @@ public class UserManagementImpl implements UserManagement {
 
     @Override
     public boolean createUser(UserCreation userCreation) {
-        throw new UnsupportedOperationException("Not yet implemented");
+
+        boolean exists = jedis.exists("user:"+userCreation.username);
+        System.out.println("testing bool " + exists);
+
+        if(!exists){
+            jedis.set("user:"+userCreation.username,userCreation.username);
+            jedis.set("user:"+userCreation.username+":"+userCreation.firstname,userCreation.firstname);
+            jedis.set("user:"+userCreation.username+":"+userCreation.lastname,userCreation.lastname);
+            jedis.set("user:"+userCreation.username+":"+userCreation.passwordHash,userCreation.passwordHash);
+            jedis.set("user:"+userCreation.username+":"+userCreation.birthday,userCreation.birthday);
+            jedis.set("user:"+userCreation.username+":numFollowers","0");
+            jedis.set("user:"+userCreation.username+":numFollowing","0");
+
+            
+        }
+
+        return !exists;
+    
     }
 
     @Override

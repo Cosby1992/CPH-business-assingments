@@ -35,3 +35,6 @@ zadd user:cosby:following 0 jackblack
 zadd user:cosby:posts 20210506113852 "My new update message"
 zadd user:cosby:posts 20210506113945 "My new update message2"
 zadd user:cosby:posts 20210506114050 "My new update message3"
+
+
+user
