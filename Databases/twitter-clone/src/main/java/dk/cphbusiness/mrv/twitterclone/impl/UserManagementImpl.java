@@ -27,10 +27,10 @@ public class UserManagementImpl implements UserManagement {
 
         if(!exists){
             jedis.set("user:"+userCreation.username,userCreation.username);
-            jedis.set("user:"+userCreation.username+":"+userCreation.firstname,userCreation.firstname);
-            jedis.set("user:"+userCreation.username+":"+userCreation.lastname,userCreation.lastname);
-            jedis.set("user:"+userCreation.username+":"+userCreation.passwordHash,userCreation.passwordHash);
-            jedis.set("user:"+userCreation.username+":"+userCreation.birthday,userCreation.birthday);
+            jedis.set("user:"+userCreation.username+":firstname",userCreation.firstname);
+            jedis.set("user:"+userCreation.username+":lastname",userCreation.lastname);
+            jedis.set("user:"+userCreation.username+":password",userCreation.passwordHash);
+            jedis.set("user:"+userCreation.username+":birthday",userCreation.birthday);
             jedis.set("user:"+userCreation.username+":numFollowers","0");
             jedis.set("user:"+userCreation.username+":numFollowing","0");
 
