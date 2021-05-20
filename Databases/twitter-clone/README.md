@@ -1,12 +1,45 @@
 # Twitter-clone
 ## Task 1
-See Assignment 5.
+Server is created by Java code (in docker container). Remember to pull redis, alpine:3.5 and testcontainers/ryuk:0.3.0 images from docker before running the code.
+Client is emulated trough tests.
 
 ## Task 2
-Implement the tiny twitter clone found at this repo, using only Redis as a data store.
+The two classes ```PostManagementImpl``` and ```UserManagementImpl``` has been implemented. They are located in ```src\main\java\dk\cphbusiness\mrv\twitterclone\impl\```. Run the test from ```src\test\java\dk\cphbusiness\mrv\twitterclone``` to see that they pass.
 
-You need to implement the two classes PostManagementImpl and UserManagementImpl, and to run the unit tests by right clicking the Java folder under Test, and choosing Run ‘All Tests’.
-You are allowed to change the interface and DTOs, just write a small readme listing the changes.
+### Changes
+1. Added dependencies to pom xml: 
+    ```
+    <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.6.2</version>
+    </dependency>
+    ```
+        
 
 ## Task 3
-In a readme, write a short explanation of your redis data model. It should be clear enough for a developer to be able to implement the same thing.
+We have chosen a simple redis DB setup. 
+
+### User Storage
+|Key                                |Value                 |
+|-----------------------------------|----------------------|
+|user:\<username\>                  |\<username\>          | 
+|user:\<username\>:firstname        |\<firstname\>         | 
+|user:\<username\>:lastname         |\<lastname\>          | 
+|user:\<username\>:password         |\<password\>          | 
+|user:\<username\>:birthday         |\<birthday\>          | 
+|user:\<username\>:following        |List \<username\>     | 
+|user:\<username\>:followers        |List \<username\>     | 
+|user:\<username\>:numFollowing     |\<numFollowing\>      | 
+|user:\<username\>:numFollowers     |\<numFollowers\>      | 
+
+### Post Storage
+|Key                                |Value                    |
+|-----------------------------------|-------------------------|
+|post:\<username\>:\<timestamp\>    |\<message\>              | 
+|post:\<username\>:posttime         |Sorted Set \<timestamp\> |        | 
