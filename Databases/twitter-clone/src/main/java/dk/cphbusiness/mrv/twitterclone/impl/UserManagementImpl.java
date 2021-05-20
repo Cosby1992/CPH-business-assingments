@@ -24,7 +24,6 @@ public class UserManagementImpl implements UserManagement {
     public boolean createUser(UserCreation userCreation) {
 
         boolean exists = jedis.exists("user:"+userCreation.username);
-        System.out.println("testing bool " + exists);
 
         if(!exists){
             jedis.set("user:"+userCreation.username,userCreation.username);
@@ -64,7 +63,23 @@ public class UserManagementImpl implements UserManagement {
 
     @Override
     public boolean updateUser(UserUpdate userUpdate) {
-        throw new UnsupportedOperationException("Not yet implemented");
+
+        boolean exists = jedis.exists("user:"+userUpdate.username);
+
+        if(exists){
+            if(userUpdate.firstname != null) {
+            jedis.set("user:"+userUpdate.username+":firstname",userUpdate.firstname);
+            }    
+            if(userUpdate.lastname != null) {
+            jedis.set("user:"+userUpdate.username+":lastname",userUpdate.lastname);
+            }
+            if(userUpdate.birthday != null) {
+            jedis.set("user:"+userUpdate.username+":birthday",userUpdate.birthday);
+            }
+            
+        }
+
+        return exists;
     }
 
     @Override
