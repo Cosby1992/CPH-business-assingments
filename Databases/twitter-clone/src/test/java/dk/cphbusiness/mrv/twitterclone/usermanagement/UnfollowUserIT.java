@@ -20,6 +20,7 @@ public class UnfollowUserIT extends TestBase {
         um.createUser(carl);
         um.followUser(albert.username, benny.username);
         um.followUser(albert.username, carl.username);
+        System.out.println(1);
         assertTrue(um.getFollowedUsers(albert.username).containsAll(List.of(benny.username, carl.username)));
 
         // Act
@@ -27,7 +28,9 @@ public class UnfollowUserIT extends TestBase {
 
         // Assert
         var followedUsers = um.getFollowedUsers(albert.username);
+        System.out.println(2);
         assertTrue(followedUsers.contains(benny.username));
+        System.out.println(followedUsers);
         assertFalse(followedUsers.contains(carl.username));
     }
 

@@ -7,6 +7,7 @@ import dk.cphbusiness.mrv.twitterclone.dto.UserUpdate;
 import dk.cphbusiness.mrv.twitterclone.util.Time;
 import redis.clients.jedis.Jedis;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -68,22 +69,80 @@ public class UserManagementImpl implements UserManagement {
 
     @Override
     public boolean followUser(String username, String usernameToFollow) {
-        throw new UnsupportedOperationException("Not yet implemented");
+
+        String follower = "user:" + username;
+        String followed = "user:" + usernameToFollow;
+
+        if(!jedis.exists(follower) || !jedis.exists(followed)) return false;
+        
+        String rootKeyFollowing = follower + ":following";
+        String rootKeyFollowers = followed + ":followers";
+
+        jedis.lpush(rootKeyFollowers, username);
+        jedis.incr(follower + ":numFollowing");
+        jedis.lpush(rootKeyFollowing, usernameToFollow);
+        jedis.incr(followed + ":numFollowers");
+        
+        return true;
     }
 
     @Override
     public boolean unfollowUser(String username, String usernameToUnfollow) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        
+        String follower = "user:" + username;
+        String followed = "user:" + usernameToUnfollow;
+
+        if(!jedis.exists(follower) || !jedis.exists(followed)) return false;
+
+        //remove from following username
+        jedis.lrem(follower + ":following", 0, usernameToUnfollow);
+        jedis.decr(follower + ":numFollowing");
+
+        //remove from followers usernameToUnfollow
+        jedis.lrem(followed + ":followers", 0, username);
+        jedis.decr(followed + ":numFollowers");
+
+        return true;
+
     }
 
     @Override
     public Set<String> getFollowedUsers(String username) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        
+        String userKey = "user:" + username;
+        if(!jedis.exists(userKey)) return null;
+
+        String rootKeyFollowers = userKey + ":following";
+        
+        List<String> followers = jedis.lrange(rootKeyFollowers, 0, -1);
+
+        Set<String> hSet = new HashSet<String>();
+        
+        for (String x : followers)
+            hSet.add(x);
+        
+        return hSet;
+
+
+
     }
 
     @Override
     public Set<String> getUsersFollowing(String username) {
-        throw new UnsupportedOperationException("Not yet implemented");
+
+        String userKey = "user:" + username;
+        if(!jedis.exists(userKey)) return null;
+
+        String rootKeyFollowers = userKey + ":followers";
+        
+        List<String> followers = jedis.lrange(rootKeyFollowers, 0, -1);
+
+        Set<String> hSet = new HashSet<String>();
+        
+        for (String x : followers)
+            hSet.add(x);
+        
+        return hSet;
     }
 
 }

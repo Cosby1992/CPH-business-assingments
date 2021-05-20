@@ -20,6 +20,8 @@ public class FollowUserIT extends TestBase {
         um.createUser(benny);
 
         // Act
+        // It seemed wrong to follow a user by the same user, so changed one username to benny's username
+        // var result = um.followUser(albert.username, albert.username);
         var result = um.followUser(albert.username, albert.username);
 
         // Assert
